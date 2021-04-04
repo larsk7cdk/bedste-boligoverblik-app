@@ -1,0 +1,17 @@
+<button
+  type="button"
+  class="btn btn-outline-light me-2"
+  *ngIf="!loginDisplay"
+  (click)="login()"
+>
+  Login
+</button>
+<button
+  type="button"
+  class="btn btn-outline-light me-2"
+  *ngIf="loginDisplay"
+  (click)="logout()"
+>
+  Logout
+</button>
+<!-- <button type="button" class="btn btn-warning">Sign-up</button> -->
