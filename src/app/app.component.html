@@ -10,9 +10,23 @@
       <ul
         class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
       >
-        <li><a href="#" class="nav-link px-2 text-secondary">Boliger</a></li>
+        <li>
+          <a
+            class="nav-link px-2 text-secondary"
+            [routerLink]="['/boliger/oversigt']"
+            routerLinkActive="router-link-active"
+            >Boliger</a
+          >
+        </li>
         <!-- <li><a href="#" class="nav-link px-2 text-white">Features</a></li> -->
-        <li><a href="#" class="nav-link px-2 text-white">Om</a></li>
+        <li>
+          <a
+            class="nav-link px-2 text-white"
+            [routerLink]="['/info/om']"
+            routerLinkActive="router-link-active"
+            >Om</a
+          >
+        </li>
       </ul>
 
       <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
