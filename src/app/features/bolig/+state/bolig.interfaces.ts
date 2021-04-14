@@ -10,5 +10,3 @@ export type BoligState = StateOfType<{
 
 export interface Bolig {}
 
-export interface BoligRequest {}
-export interface BoligResponse {}

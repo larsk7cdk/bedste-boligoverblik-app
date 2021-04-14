@@ -1,4 +1,5 @@
-import { Bolig, BoligRequest, BoligResponse } from './bolig.interfaces';
+import { Bolig } from './bolig.interfaces';
+import { BoligRequest } from '../services/bolig.service.interfaces';
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';

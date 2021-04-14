@@ -2,33 +2,34 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import * as BoligActions from './bolig.actions';
+import * as fromBoligActions from './bolig.actions';
 import { HttpErrorResponse } from '@angular/common/http';
-import { BoligResponse } from './bolig.interfaces';
+import { BoligService } from '../services/bolig.service';
+import { BoligResponse } from '../services/bolig.service.interfaces';
 
 @Injectable()
 export class BoligEffects {
-  constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions, private boligService: BoligService) {}
 
-  // loadJyskeFrihedBeregning$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(BoligActions.loadBolig),
-  //     switchMap((action) =>
-  //       this.BoligService.getBoliger$(action.request).pipe(
-  //         map((response: BoligResponse) =>
-  //           BoligActions.loadBoligSuccess({
-  //             boliger: response,
-  //           })
-  //         ),
-  //         catchError((error: HttpErrorResponse) =>
-  //           of(
-  //             BoligActions.loadBoligFailed({
-  //               error,
-  //             })
-  //           )
-  //         )
-  //       )
-  //     )
-  //   )
-  // );
+  loadJyskeFrihedBeregning$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromBoligActions.loadBolig),
+      switchMap((action) =>
+        this.boligService.getBolig$(action.request).pipe(
+          map((response: BoligResponse) =>
+            fromBoligActions.loadBoligSuccess({
+              boliger: [],
+            })
+          ),
+          catchError((error: HttpErrorResponse) =>
+            of(
+              fromBoligActions.loadBoligFailed({
+                error,
+              })
+            )
+          )
+        )
+      )
+    )
+  );
 }
