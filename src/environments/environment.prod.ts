@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net',
+  apiBaseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net/api',
 };
