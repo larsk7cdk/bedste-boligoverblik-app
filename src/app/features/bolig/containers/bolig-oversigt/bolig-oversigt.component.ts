@@ -8,9 +8,9 @@ import { BoligFacade } from '../../+state/bolig.facade';
   styleUrls: ['./bolig-oversigt.component.scss'],
 })
 export class BoligOversigtComponent implements OnInit {
-  constructor(private boligFacade: BoligFacade) {}
+  constructor(public boligFacade: BoligFacade) {}
 
   ngOnInit(): void {
-    this.boligFacade.Dispatch(loadBolig({ request: '' }));
+    this.boligFacade.Dispatch(loadBolig({ userKey: 'Lars' }));
   }
 }

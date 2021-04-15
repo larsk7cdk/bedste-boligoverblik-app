@@ -1,5 +1,4 @@
 import { Bolig } from './bolig.interfaces';
-import { BoligRequest } from '../services/bolig.service.interfaces';
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';
@@ -14,7 +13,7 @@ export type BoligDispatchableActions = TypedAction<BoligActionTypes>;
 
 export const loadBolig = createAction(
   BoligActionTypes.BOLIG_LOAD,
-  props<{ request: BoligRequest }>()
+  props<{ userKey: string }>()
 );
 
 export const loadBoligSuccess = createAction(

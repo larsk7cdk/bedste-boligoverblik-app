@@ -1,0 +1,32 @@
+[
+  {
+    "userKey": "Lars",
+    "addresse": "Klydevej 7",
+    "x": 0,
+    "y": 0,
+    "partitionKey": "bolig",
+    "rowKey": "a9542e91-9fc0-443b-8c27-f0d5936718f9",
+    "timestamp": "2021-04-01T08:52:58.7793363+00:00",
+    "eTag": "W/\"datetime'2021-04-01T08%3A52%3A58.7793363Z'\""
+  },
+  {
+    "userKey": "Lars",
+    "addresse": "Torndalsvej 11",
+    "x": 0,
+    "y": 0,
+    "partitionKey": "bolig",
+    "rowKey": "d08a03a1-fe13-4dce-ae73-4bc0de062bc2",
+    "timestamp": "2021-04-01T12:27:18.1844653+00:00",
+    "eTag": "W/\"datetime'2021-04-01T12%3A27%3A18.1844653Z'\""
+  },
+  {
+    "userKey": "Lars",
+    "addresse": "Grenhusene 49",
+    "x": 10,
+    "y": 20,
+    "partitionKey": "bolig",
+    "rowKey": "dfc7a963-c123-44b5-bf50-2da583e12791",
+    "timestamp": "2021-04-10T08:17:45.1023714+00:00",
+    "eTag": "W/\"datetime'2021-04-10T08%3A17%3A45.1023714Z'\""
+  }
+]

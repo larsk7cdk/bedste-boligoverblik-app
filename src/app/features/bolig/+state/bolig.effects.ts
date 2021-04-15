@@ -6,6 +6,7 @@ import * as fromBoligActions from './bolig.actions';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BoligService } from '../services/bolig.service';
 import { BoligResponse } from '../services/bolig.service.interfaces';
+import { Bolig } from './bolig.interfaces';
 
 @Injectable()
 export class BoligEffects {
@@ -15,10 +16,22 @@ export class BoligEffects {
     this.actions$.pipe(
       ofType(fromBoligActions.loadBolig),
       switchMap((action) =>
-        this.boligService.getBolig$(action.request).pipe(
+        this.boligService.getBolig$(action.userKey).pipe(
           map((response: BoligResponse) =>
             fromBoligActions.loadBoligSuccess({
-              boliger: [],
+              boliger: response.map(
+                (m): Bolig => {
+                  return {
+                    userKey: m.userKey,
+                    addresse: m.addresse,
+                    x: m.x,
+                    y: m.y,
+                    partitionKey: m.partitionKey,
+                    rowKey: m.rowKey,
+                    timestamp: m.timestamp,
+                  };
+                }
+              ),
             })
           ),
           catchError((error: HttpErrorResponse) =>

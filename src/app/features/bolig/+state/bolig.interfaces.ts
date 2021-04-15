@@ -8,5 +8,12 @@ export type BoligState = StateOfType<{
   boliger: Bolig[];
 }>;
 
-export interface Bolig {}
-
+export interface Bolig {
+  userKey: string;
+  addresse: string;
+  x: number;
+  y: number;
+  partitionKey: string;
+  rowKey: string;
+  timestamp: Date;
+}
