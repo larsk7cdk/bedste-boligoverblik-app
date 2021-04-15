@@ -11,9 +11,11 @@ export class BoligService {
   getBolig$(userKey: string): Observable<BoligResponse> {
     const url = `${environment.apiBaseUrl}/${userKey}`;
 
-    return this.httpClient.get<BoligResponse>(
-      './assets/mocks/boligresponse.json'
-    );
+    if (!environment.production) {
+      return this.httpClient.get<BoligResponse>(
+        './assets/mocks/boligresponse.json'
+      );
+    }
 
     return this.httpClient.get<BoligResponse>(url, {
       withCredentials: true,
