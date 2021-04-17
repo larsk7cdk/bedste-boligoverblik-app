@@ -1,21 +1,22 @@
 <h1>Boliger</h1>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th class="w-100">Addresse</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of boligFacade.Boliger$ | async">
-      <td>{{ item.addresse }}</td>
-      <td><button class="btn btn-outline-dark">Detaljer</button></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <button class="btn btn-success my-3" [routerLink]="['/boliger/opret']">
-      Opret ny bolig
-    </button>
-  </tfoot>
-</table>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="w-100">Addresse</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of boligFacade.Boliger$ | async">
+        <td>{{ item.addresse }}</td>
+        <td><button class="btn btn-outline-dark">Detaljer</button></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <button class="btn btn-success my-3" [routerLink]="['/boliger/opret']">
+        Opret ny bolig
+      </button>
+    </tfoot>
+  </table>
+</div>
