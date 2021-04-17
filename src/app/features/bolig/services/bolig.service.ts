@@ -9,7 +9,7 @@ export class BoligService {
   constructor(private httpClient: HttpClient) {}
 
   getBolig$(userKey: string): Observable<BoligResponse> {
-    const url = `${environment.apiBaseUrl}/${userKey}`;
+    const url = `${environment.apiBaseUrl}/bolig/${userKey}`;
 
     if (!environment.production) {
       return this.httpClient.get<BoligResponse>(
