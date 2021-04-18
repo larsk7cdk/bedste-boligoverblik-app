@@ -1,7 +1,7 @@
 [
   {
     "userKey": "Lars",
-    "addresse": "Klydevej 7",
+    "adresse": "Klydevej 7",
     "x": 0,
     "y": 0,
     "partitionKey": "bolig",
@@ -11,7 +11,7 @@
   },
   {
     "userKey": "Lars",
-    "addresse": "Torndalsvej 11",
+    "adresse": "Torndalsvej 11",
     "x": 0,
     "y": 0,
     "partitionKey": "bolig",
@@ -21,7 +21,7 @@
   },
   {
     "userKey": "Lars",
-    "addresse": "Grenhusene 49",
+    "adresse": "Grenhusene 49",
     "x": 10,
     "y": 20,
     "partitionKey": "bolig",

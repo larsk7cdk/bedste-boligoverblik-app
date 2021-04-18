@@ -10,7 +10,7 @@ export type BoligState = StateOfType<{
 
 export interface Bolig {
   userKey: string;
-  addresse: string;
+  adresse: string;
   x: number;
   y: number;
   partitionKey: string;
@@ -20,7 +20,7 @@ export interface Bolig {
 
 export interface BoligOpret {
   userKey: string;
-  addresse: string;
+  adresse: string;
   x: number;
   y: number;
 }

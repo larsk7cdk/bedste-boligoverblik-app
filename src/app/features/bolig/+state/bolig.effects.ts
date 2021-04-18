@@ -33,7 +33,7 @@ export class BoligEffects {
                 (m): Bolig => {
                   return {
                     userKey: m.userKey,
-                    addresse: m.addresse,
+                    adresse: m.adresse,
                     x: m.x,
                     y: m.y,
                     partitionKey: m.partitionKey,
@@ -62,7 +62,7 @@ export class BoligEffects {
       exhaustMap((action) => {
         const request: BoligOpretRequest = {
           userKey: action.request.userKey,
-          addresse: action.request.addresse,
+          adresse: action.request.adresse,
           x: 0,
           y: 1,
           partitionKey: 'bolig',

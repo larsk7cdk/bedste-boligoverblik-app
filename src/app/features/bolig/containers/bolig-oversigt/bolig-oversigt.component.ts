@@ -11,6 +11,6 @@ export class BoligOversigtComponent implements OnInit {
   constructor(public boligFacade: BoligFacade) {}
 
   ngOnInit(): void {
-    this.boligFacade.Dispatch(loadBolig({ userKey: 'Lars' }));
+    this.boligFacade.Dispatch(loadBolig({ userKey: 'lars' }));
   }
 }

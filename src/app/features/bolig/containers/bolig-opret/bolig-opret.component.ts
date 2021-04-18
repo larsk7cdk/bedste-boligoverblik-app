@@ -14,10 +14,9 @@ export class BoligOpretComponent implements OnInit {
   ngOnInit(): void {}
 
   onSave(): void {
-    debugger;
     const request: BoligOpret = {
       userKey: 'Lars',
-      addresse: 'xxx',
+      adresse: 'xxx',
       x: 1,
       y: 2,
     };

@@ -1,7 +1,7 @@
 export interface BoligResponse
   extends Array<{
     userKey: string;
-    addresse: string;
+    adresse: string;
     x: number;
     y: number;
     partitionKey: string;
@@ -12,7 +12,7 @@ export interface BoligResponse
 
 export interface BoligOpretRequest {
   userKey: string;
-  addresse: string;
+  adresse: string;
   x: number;
   y: number;
   partitionKey: string;
