@@ -9,3 +9,11 @@ export interface BoligResponse
     timestamp: Date;
     eTag: string;
   }> {}
+
+export interface BoligOpretRequest {
+  userKey: string;
+  addresse: string;
+  x: number;
+  y: number;
+  partitionKey: string;
+}

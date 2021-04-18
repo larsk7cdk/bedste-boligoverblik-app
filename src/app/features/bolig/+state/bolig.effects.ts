@@ -1,18 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import {
+  catchError,
+  exhaust,
+  exhaustMap,
+  map,
+  switchMap,
+  tap,
+} from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as fromBoligActions from './bolig.actions';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BoligService } from '../services/bolig.service';
-import { BoligResponse } from '../services/bolig.service.interfaces';
+import {
+  BoligOpretRequest,
+  BoligResponse,
+} from '../services/bolig.service.interfaces';
 import { Bolig } from './bolig.interfaces';
 
 @Injectable()
 export class BoligEffects {
   constructor(private actions$: Actions, private boligService: BoligService) {}
 
-  loadJyskeFrihedBeregning$ = createEffect(() =>
+  loadBolig$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromBoligActions.loadBolig),
       switchMap((action) =>
@@ -41,6 +51,32 @@ export class BoligEffects {
               })
             )
           )
+        )
+      )
+    )
+  );
+
+  saveBolig$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromBoligActions.saveBolig),
+      exhaustMap((action) => {
+        const request: BoligOpretRequest = {
+          userKey: action.request.userKey,
+          addresse: action.request.addresse,
+          x: 0,
+          y: 1,
+          partitionKey: 'bolig',
+        };
+
+        return this.boligService
+          .saveBolig$(request)
+          .pipe(map(() => fromBoligActions.saveBoligSuccess()));
+      }),
+      catchError((error: HttpErrorResponse) =>
+        of(
+          fromBoligActions.saveBoligFailed({
+            error,
+          })
         )
       )
     )

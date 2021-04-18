@@ -17,3 +17,10 @@ export interface Bolig {
   rowKey: string;
   timestamp: Date;
 }
+
+export interface BoligOpret {
+  userKey: string;
+  addresse: string;
+  x: number;
+  y: number;
+}
