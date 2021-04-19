@@ -4,12 +4,15 @@ import { BoligService } from './services/bolig.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BoligStateModule } from './+state/bolig.state.module';
+import { BoligOpretComponent } from './containers/bolig-opret/bolig-opret.component';
 
 @NgModule({
-  declarations: [BoligOversigtComponent],
+  declarations: [BoligOversigtComponent, BoligOpretComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BoligRoutingModule,
     BoligStateModule,

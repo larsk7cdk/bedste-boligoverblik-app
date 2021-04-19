@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {
-  catchError,
-  exhaust,
-  exhaustMap,
-  map,
-  switchMap,
-  tap,
-} from 'rxjs/operators';
+import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as fromBoligActions from './bolig.actions';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -33,6 +26,9 @@ export class BoligEffects {
                 (m): Bolig => {
                   return {
                     userKey: m.userKey,
+                    vejnavn: m.vejnavn,
+                    husnummer: m.husnummer,
+                    postnummer: m.postnummer,
                     adresse: m.adresse,
                     x: m.x,
                     y: m.y,
@@ -62,10 +58,9 @@ export class BoligEffects {
       exhaustMap((action) => {
         const request: BoligOpretRequest = {
           userKey: action.request.userKey,
-          adresse: action.request.adresse,
-          x: 0,
-          y: 1,
-          partitionKey: 'bolig',
+          vejnavn: action.request.vejnavn,
+          husnummer: action.request.husnummer,
+          postnummer: action.request.postnummer,
         };
 
         return this.boligService

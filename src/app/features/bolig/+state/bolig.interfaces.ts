@@ -10,6 +10,9 @@ export type BoligState = StateOfType<{
 
 export interface Bolig {
   userKey: string;
+  vejnavn: string;
+  husnummer: string;
+  postnummer: number;
   adresse: string;
   x: number;
   y: number;
@@ -20,7 +23,7 @@ export interface Bolig {
 
 export interface BoligOpret {
   userKey: string;
-  adresse: string;
-  x: number;
-  y: number;
+  vejnavn: string;
+  husnummer: string;
+  postnummer: number;
 }
