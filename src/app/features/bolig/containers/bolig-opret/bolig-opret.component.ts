@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { delay, first, skipWhile, takeUntil, takeWhile } from 'rxjs/operators';
 import { saveBolig } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
 import { BoligOpret } from '../../+state/bolig.interfaces';
@@ -14,8 +17,9 @@ import { BoligOpret } from '../../+state/bolig.interfaces';
   templateUrl: './bolig-opret.component.html',
   styleUrls: ['./bolig-opret.component.scss'],
 })
-export class BoligOpretComponent implements OnInit {
+export class BoligOpretComponent implements OnInit, OnDestroy {
   form: FormGroup = new FormGroup({});
+  subscriptions: Subscription[] = [];
 
   /* getters */
   /* FJERNES NÅR LOGIN ER PÅ PLADS */
@@ -41,10 +45,28 @@ export class BoligOpretComponent implements OnInit {
   //   });
   // }
 
-  constructor(private fb: FormBuilder, public boligFacade: BoligFacade) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    public boligFacade: BoligFacade
+  ) {}
 
   ngOnInit(): void {
+    this.subscriptions.push(
+      this.boligFacade.BoligIsSaved$.pipe(
+        skipWhile((s) => s === false),
+        delay(500)
+      ).subscribe(() => {
+        this.router.navigate(['/boliger/oversigt']);
+      })
+    );
+
     this._configureForm();
+  }
+
+  ngOnDestroy(): void {
+    console.log('onDestroy');
+    this.subscriptions.forEach((s) => s.unsubscribe());
   }
 
   onOpret(): void {

@@ -1,4 +1,4 @@
-import * as fromBoligSelectors from './bolig.selectors';
+import * as fromSelectors from './bolig.selectors';
 import { BoligDispatchableActions } from './bolig.actions';
 import { distinctUntilChanged } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
@@ -10,22 +10,32 @@ export class BoligFacade {
 
   public BoligIsLoading$ = this.store.pipe(
     distinctUntilChanged(),
-    select(fromBoligSelectors.selectBoligIsLoading)
+    select(fromSelectors.selectBoligIsLoading)
   );
 
   public BoligIsLoaded$ = this.store.pipe(
     distinctUntilChanged(),
-    select(fromBoligSelectors.selectBoligIsLoaded)
+    select(fromSelectors.selectBoligIsLoaded)
+  );
+
+  public BoligIsSaving$ = this.store.pipe(
+    distinctUntilChanged(),
+    select(fromSelectors.selectBoligIsSaving)
+  );
+
+  public BoligIsSaved$ = this.store.pipe(
+    distinctUntilChanged(),
+    select(fromSelectors.selectBoligIsSaved)
   );
 
   public BoligHasError$ = this.store.pipe(
     distinctUntilChanged(),
-    select(fromBoligSelectors.selectBoligHasError)
+    select(fromSelectors.selectBoligHasError)
   );
 
   public Boliger$ = this.store.pipe(
     distinctUntilChanged(),
-    select(fromBoligSelectors.selectBoliger)
+    select(fromSelectors.selectBoliger)
   );
 
   public Dispatch(action: BoligDispatchableActions): void {

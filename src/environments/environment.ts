@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // apiBaseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net/api'
-  apiBaseUrl: 'https://localhost:5001/api'
+  apiBaseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net/api'
+  // apiBaseUrl: 'https://localhost:5001/api'
 };
 
 /*

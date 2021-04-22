@@ -1,4 +1,4 @@
-import * as fromBoligReducer from './bolig.reducer';
+import * as fromReducer from './bolig.reducer';
 import { BOLIG_FEATURE_NAME } from '../bolig.constants';
 import { BoligEffects } from './bolig.effects';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { BoligFacade } from './bolig.facade';
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature(BOLIG_FEATURE_NAME, fromBoligReducer.reducer),
+    StoreModule.forFeature(BOLIG_FEATURE_NAME, fromReducer.reducer),
     EffectsModule.forFeature([BoligEffects]),
   ],
   providers: [BoligFacade],

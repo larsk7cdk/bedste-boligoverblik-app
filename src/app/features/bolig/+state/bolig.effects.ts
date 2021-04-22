@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import * as fromBoligActions from './bolig.actions';
+import * as fromActions from './bolig.actions';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BoligService } from '../services/bolig.service';
 import {
@@ -17,11 +17,11 @@ export class BoligEffects {
 
   loadBolig$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromBoligActions.loadBolig),
+      ofType(fromActions.loadBolig),
       switchMap((action) =>
         this.boligService.getBolig$(action.userKey).pipe(
           map((response: BoligResponse) =>
-            fromBoligActions.loadBoligSuccess({
+            fromActions.loadBoligSuccess({
               boliger: response.map(
                 (m): Bolig => {
                   return {
@@ -42,7 +42,7 @@ export class BoligEffects {
           ),
           catchError((error: HttpErrorResponse) =>
             of(
-              fromBoligActions.loadBoligFailed({
+              fromActions.loadBoligFailed({
                 error,
               })
             )
@@ -54,7 +54,7 @@ export class BoligEffects {
 
   saveBolig$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fromBoligActions.saveBolig),
+      ofType(fromActions.saveBolig),
       exhaustMap((action) => {
         const request: BoligOpretRequest = {
           userKey: action.request.userKey,
@@ -65,11 +65,11 @@ export class BoligEffects {
 
         return this.boligService
           .saveBolig$(request)
-          .pipe(map(() => fromBoligActions.saveBoligSuccess()));
+          .pipe(map(() => fromActions.saveBoligSuccess()));
       }),
       catchError((error: HttpErrorResponse) =>
         of(
-          fromBoligActions.saveBoligFailed({
+          fromActions.saveBoligFailed({
             error,
           })
         )

@@ -1,20 +1,21 @@
-import * as fromActions from './bolig.actions';
+import * as fromActions from './laanberegning.actions';
 import { BoligState } from './bolig.interfaces';
 import { createReducer, on } from '@ngrx/store';
+import { LaanberegningState } from './laanberegning.interfaces';
 
-const initialState: BoligState = {
+const initialState: LaanberegningState = {
   behaviours: {
     loading: false,
     saving: false,
     error: null,
   },
-  boliger: [],
+  laanberegninger: [],
 };
 
 export const reducer = createReducer(
   initialState,
 
-  on(fromActions.loadBolig, (state) => {
+  on(fromActions.loadLaanberegning, (state) => {
     return {
       ...state,
       behaviours: {
@@ -24,18 +25,18 @@ export const reducer = createReducer(
     };
   }),
 
-  on(fromActions.loadBoligSuccess, (state, { boliger }) => {
+  on(fromActions.loadLaanberegningSuccess, (state, { laanberegninger }) => {
     return {
       ...state,
       behaviours: {
         ...state.behaviours,
         loading: false,
       },
-      boliger,
+      laanberegninger,
     };
   }),
 
-  on(fromActions.loadBoligFailed, (state, { error }) => {
+  on(fromActions.loadLaanberegningFailed, (state, { error }) => {
     return {
       ...state,
       behaviours: {
@@ -47,7 +48,7 @@ export const reducer = createReducer(
     };
   }),
 
-  on(fromActions.saveBolig, (state) => {
+  on(fromActions.saveLaanberegning, (state) => {
     return {
       ...state,
       behaviours: {
@@ -57,7 +58,7 @@ export const reducer = createReducer(
     };
   }),
 
-  on(fromActions.saveBoligSuccess, (state) => {
+  on(fromActions.saveLaanberegningSuccess, (state) => {
     return {
       ...state,
       behaviours: {
@@ -67,7 +68,7 @@ export const reducer = createReducer(
     };
   }),
 
-  on(fromActions.saveBoligFailed, (state, { error }) => {
+  on(fromActions.saveLaanberegningFailed, (state, { error }) => {
     return {
       ...state,
       behaviours: {
