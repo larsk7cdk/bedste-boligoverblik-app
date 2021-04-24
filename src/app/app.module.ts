@@ -37,6 +37,7 @@ import { metaReducers, reducers } from './+state/app.reducer';
     }),
     AppRoutingModule,
     AuthModule,
+
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'da-DK' }],
   bootstrap: [AppComponent],
