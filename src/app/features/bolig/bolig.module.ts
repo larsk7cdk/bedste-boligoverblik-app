@@ -9,7 +9,6 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BoligStateModule } from './+state/bolig.state.module';
 import { SharedModule } from '../shared/shared.module';
-import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
     BoligRoutingModule,
     BoligStateModule,
     SharedModule,
-    NgxBootstrapIconsModule,
   ],
   exports: [BoligOversigtComponent],
   providers: [BoligService],
