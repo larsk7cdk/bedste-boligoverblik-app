@@ -5,10 +5,9 @@ import { LaanberegningState } from './laanberegning.interfaces';
 const initialState: LaanberegningState = {
   behaviours: {
     loading: false,
-    saving: false,
     error: null,
   },
-  laanberegninger: [],
+  laanberegning: null,
 };
 
 export const reducer = createReducer(
@@ -44,37 +43,6 @@ export const reducer = createReducer(
         error,
       },
       boliger: [],
-    };
-  }),
-
-  on(fromActions.saveLaanberegning, (state) => {
-    return {
-      ...state,
-      behaviours: {
-        ...state.behaviours,
-        saving: true,
-      },
-    };
-  }),
-
-  on(fromActions.saveLaanberegningSuccess, (state) => {
-    return {
-      ...state,
-      behaviours: {
-        ...state.behaviours,
-        saving: false,
-      },
-    };
-  }),
-
-  on(fromActions.saveLaanberegningFailed, (state, { error }) => {
-    return {
-      ...state,
-      behaviours: {
-        ...state.behaviours,
-        saving: false,
-        error,
-      },
     };
   })
 );

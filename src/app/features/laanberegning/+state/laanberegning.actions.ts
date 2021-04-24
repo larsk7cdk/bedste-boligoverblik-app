@@ -1,38 +1,15 @@
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';
-import { Laanberegning, LaanberegningOpret } from './laanberegning.interfaces';
+import { Laanberegning } from './laanberegning.interfaces';
 
 const enum LaanberegningActionTypes {
-  LAAN_BEREGN = '[Laanberegning - Beregn laan]',
-  LAAN_BEREGN_SUCCESS = '[Laanberegning - Beregn laan Success]',
-  LAAN_BEREGN_FAILED = '[Laanberegning - Beregn laan Failure]',
-
   LAANBEREGNING_LOAD = '[Laanberegning - Load laanberegning]',
   LAANBEREGNING_LOAD_SUCCESS = '[Laanberegning - Load laanberegning Success]',
   LAANBEREGNING_LOAD_FAILED = '[Laanberegning - Load laanberegning Failure]',
-
-  LAANBEREGNING_SAVE = '[Laanberegning - Save laanberegning]',
-  LAANBEREGNING_SAVE_SUCCESS = '[Laanberegning - Save laanberegning Success]',
-  LAANBEREGNING_SAVE_FAILED = '[Laanberegning - Save laanberegning Failure]',
 }
 
 export type LaanberegningDispatchableActions = TypedAction<LaanberegningActionTypes>;
-
-export const beregnLaan = createAction(
-  LaanberegningActionTypes.LAAN_BEREGN,
-  props<{ request: null }>()
-);
-
-export const beregnLaanSuccess = createAction(
-  LaanberegningActionTypes.LAAN_BEREGN_SUCCESS,
-  props<{ laanresultat: object[] }>()
-);
-
-export const beregnLaanFailed = createAction(
-  LaanberegningActionTypes.LAAN_BEREGN_FAILED,
-  props<{ error: HttpErrorResponse }>()
-);
 
 export const loadLaanberegning = createAction(
   LaanberegningActionTypes.LAANBEREGNING_LOAD,
@@ -46,19 +23,5 @@ export const loadLaanberegningSuccess = createAction(
 
 export const loadLaanberegningFailed = createAction(
   LaanberegningActionTypes.LAANBEREGNING_LOAD_FAILED,
-  props<{ error: HttpErrorResponse }>()
-);
-
-export const saveLaanberegning = createAction(
-  LaanberegningActionTypes.LAANBEREGNING_SAVE,
-  props<{ request: LaanberegningOpret }>()
-);
-
-export const saveLaanberegningSuccess = createAction(
-  LaanberegningActionTypes.LAANBEREGNING_SAVE_SUCCESS
-);
-
-export const saveLaanberegningFailed = createAction(
-  LaanberegningActionTypes.LAANBEREGNING_SAVE_FAILED,
   props<{ error: HttpErrorResponse }>()
 );

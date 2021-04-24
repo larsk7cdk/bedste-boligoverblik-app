@@ -15,17 +15,7 @@ export const selectLaanberegningIsLoading = createSelector(
 export const selectLaanberegningIsLoaded = createSelector(
   selectLaanberegningState,
   (state: fromInterfaces.LaanberegningState) =>
-    state.behaviours.loading === false && state.laanberegninger !== null
-);
-
-export const selectLaanberegningIsSaving = createSelector(
-  selectLaanberegningState,
-  (state: fromInterfaces.LaanberegningState) => state.behaviours.saving === true
-);
-
-export const selectLaanberegningIsSaved = createSelector(
-  selectLaanberegningState,
-  (state: fromInterfaces.LaanberegningState) => state.behaviours.saving
+    state.behaviours.loading === false && state.laanberegning !== null
 );
 
 export const selectLaanberegningHasError = createSelector(
@@ -33,8 +23,8 @@ export const selectLaanberegningHasError = createSelector(
   (state: fromInterfaces.LaanberegningState) => state.behaviours.error !== null
 );
 
-export const selectLaanberegninger = createSelector(
+export const selectLaanberegning = createSelector(
   selectLaanberegningState,
-  (state: fromInterfaces.LaanberegningState): fromInterfaces.Laanberegning[] =>
-    state.laanberegninger
+  (state: fromInterfaces.LaanberegningState): fromInterfaces.Laanberegning =>
+    state.laanberegning
 );

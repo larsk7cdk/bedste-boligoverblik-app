@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { loadLaanprodukt } from 'src/app/features/laanprodukt/+state/laanprodukt.actions';
 import { LaanproduktFacade } from 'src/app/features/laanprodukt/+state/laanprodukt.facade';
-import { LaanberegningFacade } from '../../+state/laanberegning.facade';
+import { LaanFacade } from '../../+state/laan.facade';
 
 @Component({
-  selector: 'app-laanberegning-opret',
-  templateUrl: './laanberegning-opret.component.html',
-  styleUrls: ['./laanberegning-opret.component.scss'],
+  selector: 'app-laan-opret',
+  templateUrl: './laan-opret.component.html',
+  styleUrls: ['./laan-opret.component.scss'],
 })
-export class LaanberegningOpretComponent implements OnInit, OnDestroy {
+export class LaanOpretComponent implements OnInit, OnDestroy {
   form: FormGroup = new FormGroup({});
   subscriptions: Subscription[] = [];
 
@@ -40,7 +40,7 @@ export class LaanberegningOpretComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private router: Router,
     public laanproduktFacade: LaanproduktFacade,
-    public laanberegningFacade: LaanberegningFacade
+    public laanFacade: LaanFacade
   ) {}
 
   ngOnInit(): void {

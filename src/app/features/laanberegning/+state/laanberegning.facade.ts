@@ -18,24 +18,14 @@ export class LaanberegningFacade {
     select(fromSelectors.selectLaanberegningIsLoaded)
   );
 
-  public LaanberegningIsSaving$ = this.store.pipe(
-    distinctUntilChanged(),
-    select(fromSelectors.selectLaanberegningIsSaving)
-  );
-
-  public LaanberegningIsSaved$ = this.store.pipe(
-    distinctUntilChanged(),
-    select(fromSelectors.selectLaanberegningIsSaved)
-  );
-
   public LaanberegningHasError$ = this.store.pipe(
     distinctUntilChanged(),
     select(fromSelectors.selectLaanberegningHasError)
   );
 
-  public Laanberegninger$ = this.store.pipe(
+  public Laanberegning$ = this.store.pipe(
     distinctUntilChanged(),
-    select(fromSelectors.selectLaanberegninger)
+    select(fromSelectors.selectLaanberegning)
   );
 
   public Dispatch(action: LaanberegningDispatchableActions): void {
