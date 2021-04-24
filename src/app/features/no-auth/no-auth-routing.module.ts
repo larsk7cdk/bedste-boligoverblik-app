@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { OmComponent } from './containers/om/om.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ForsideComponent } from './forside/forside.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: ForsideComponent,
+  },
   {
     path: 'om',
     component: OmComponent,
@@ -13,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class InfoRoutingModule {}
+export class NoAuthRoutingModule {}
