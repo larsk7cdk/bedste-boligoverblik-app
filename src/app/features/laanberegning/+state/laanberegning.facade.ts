@@ -33,6 +33,11 @@ export class LaanberegningFacade {
     select(fromSelectors.selectLaanberegningHasError)
   );
 
+  public Laanprodukter$ = this.store.pipe(
+    distinctUntilChanged(),
+    select(fromSelectors.selectLaanprodukter)
+  );
+
   public Laanberegninger$ = this.store.pipe(
     distinctUntilChanged(),
     select(fromSelectors.selectLaanberegninger)

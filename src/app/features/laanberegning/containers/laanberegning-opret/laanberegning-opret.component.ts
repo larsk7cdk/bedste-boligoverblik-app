@@ -1,7 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { loadLaanprodukt } from '../../+state/laanberegning.actions';
 import { LaanberegningFacade } from '../../+state/laanberegning.facade';
 
 @Component({
@@ -12,6 +18,10 @@ import { LaanberegningFacade } from '../../+state/laanberegning.facade';
 export class LaanberegningOpretComponent implements OnInit, OnDestroy {
   form: FormGroup = new FormGroup({});
   subscriptions: Subscription[] = [];
+
+  get laanprodukt(): AbstractControl {
+    return this.form.get('laanprodukt');
+  }
 
   get vejnavn(): AbstractControl {
     return this.form.get('vejnavn');
@@ -32,6 +42,8 @@ export class LaanberegningOpretComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.laanberegningFacade.Dispatch(loadLaanprodukt());
+
     this._configureForm();
   }
 
@@ -40,12 +52,13 @@ export class LaanberegningOpretComponent implements OnInit, OnDestroy {
   }
 
   onOpret(): void {
-
+    console.log(this.laanprodukt.value);
   }
 
   _configureForm(): void {
     this.form = new FormGroup(
       this.fb.group({
+        laanprodukt: [],
         user: ['', Validators.required],
         vejnavn: ['', Validators.required],
         husnummer: ['', Validators.required],

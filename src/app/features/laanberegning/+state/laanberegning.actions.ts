@@ -1,9 +1,21 @@
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';
-import { Laanberegning, LaanberegningOpret } from './laanberegning.interfaces';
+import {
+  Laanberegning,
+  LaanberegningOpret,
+  Laanprodukt,
+} from './laanberegning.interfaces';
 
 const enum LaanberegningActionTypes {
+  LAANPRODUKT_LOAD = '[Laanberegning - Load laanprodukter]',
+  LAANPRODUKT_LOAD_SUCCESS = '[Laanberegning - Load laanprodukter Success]',
+  LAANPRODUKT_LOAD_FAILED = '[Laanberegning - Load laanprodukter Failure]',
+
+  LAAN_BEREGN = '[Laanberegning - Beregn laan]',
+  LAAN_BEREGN_SUCCESS = '[Laanberegning - Beregn laan Success]',
+  LAAN_BEREGN_FAILED = '[Laanberegning - Beregn laan Failure]',
+
   LAANBEREGNING_LOAD = '[Laanberegning - Load laanberegning]',
   LAANBEREGNING_LOAD_SUCCESS = '[Laanberegning - Load laanberegning Success]',
   LAANBEREGNING_LOAD_FAILED = '[Laanberegning - Load laanberegning Failure]',
@@ -14,6 +26,35 @@ const enum LaanberegningActionTypes {
 }
 
 export type LaanberegningDispatchableActions = TypedAction<LaanberegningActionTypes>;
+
+export const loadLaanprodukt = createAction(
+  LaanberegningActionTypes.LAANPRODUKT_LOAD
+);
+
+export const loadLaanproduktSuccess = createAction(
+  LaanberegningActionTypes.LAANPRODUKT_LOAD_SUCCESS,
+  props<{ laanprodukter: Laanprodukt[] }>()
+);
+
+export const loadLaanproduktFailed = createAction(
+  LaanberegningActionTypes.LAANPRODUKT_LOAD_FAILED,
+  props<{ error: HttpErrorResponse }>()
+);
+
+export const beregnLaan = createAction(
+  LaanberegningActionTypes.LAAN_BEREGN,
+  props<{ request: null }>()
+);
+
+export const beregnLaanSuccess = createAction(
+  LaanberegningActionTypes.LAAN_BEREGN_SUCCESS,
+  props<{ laanresultat: Laanprodukt[] }>()
+);
+
+export const beregnLaanFailed = createAction(
+  LaanberegningActionTypes.LAAN_BEREGN_FAILED,
+  props<{ error: HttpErrorResponse }>()
+);
 
 export const loadLaanberegning = createAction(
   LaanberegningActionTypes.LAANBEREGNING_LOAD,

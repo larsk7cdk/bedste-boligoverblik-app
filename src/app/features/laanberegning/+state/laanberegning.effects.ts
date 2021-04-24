@@ -3,8 +3,10 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Laanberegning } from './laanberegning.interfaces';
+import { Laanberegning, Laanprodukt } from './laanberegning.interfaces';
 import { LaanberegningService } from '../services/laanberegning.service';
+import { LaanproduktResponse } from '../services/laanprodukt.service.interface';
+import { LaanproduktService } from '../services/laanprodukt.service';
 import { of } from 'rxjs';
 import {
   LaanberegningOpretRequest,
@@ -15,10 +17,40 @@ import {
 export class LaanberegningEffects {
   constructor(
     private actions$: Actions,
+    private laanproduktService: LaanproduktService,
     private laanberegningService: LaanberegningService
   ) {}
 
-  loadLaanberegning$ = createEffect(() =>
+  loadLaanprodukter$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromActions.loadLaanprodukt),
+      switchMap((action) =>
+        this.laanproduktService.getLaanprodukter$().pipe(
+          map((response: LaanproduktResponse) =>
+            fromActions.loadLaanproduktSuccess({
+              laanprodukter: response.laanProdukter.map(
+                (m): Laanprodukt => {
+                  return {
+                    key: m.key,
+                    value: m.value,
+                  };
+                }
+              ),
+            })
+          ),
+          catchError((error: HttpErrorResponse) =>
+            of(
+              fromActions.loadLaanproduktFailed({
+                error,
+              })
+            )
+          )
+        )
+      )
+    )
+  );
+
+  loadLaanberegninger$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromActions.loadLaanberegning),
       switchMap((action) =>

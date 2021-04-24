@@ -1,6 +1,23 @@
 <h3>Opret ny lånberegning</h3>
 
 <form novalidate autocomplete="off" [formGroup]="form">
+
+
+  <div class="form-group">
+    <label for="laanproduktSelect">Lån produkt</label>
+    <select
+      id="laanproduktSelect"
+      class="form-select"
+      formControlName="laanprodukt"
+    >
+      <option
+        *ngFor="let item of laanberegningFacade.Laanprodukter$ | async"
+        [value]="item.key"
+        >{{item.value}}</option
+      >
+    </select>
+  </div>
+
   <div class="form-group">
     <label for="userInput">User key (midlertidig!!!)</label>
     <input

@@ -8,6 +8,7 @@ import { LaanberegningService } from './services/laanberegning.service';
 import { LaanberegningOversigtComponent } from './containers/laanberegning-oversigt/laanberegning-oversigt.component';
 import { LaanberegningOpretComponent } from './containers/laanberegning-opret/laanberegning-opret.component';
 import { SharedModule } from '../shared/shared.module';
+import { LaanproduktService } from './services/laanprodukt.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,6 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   exports: [],
-  providers: [LaanberegningService],
+  providers: [LaanproduktService, LaanberegningService],
 })
 export class LaanberegningModule {}
