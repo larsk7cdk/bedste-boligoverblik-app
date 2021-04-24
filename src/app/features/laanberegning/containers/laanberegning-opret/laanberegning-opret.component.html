@@ -11,7 +11,7 @@
       formControlName="laanprodukt"
     >
       <option
-        *ngFor="let item of laanberegningFacade.Laanprodukter$ | async"
+        *ngFor="let item of laanproduktFacade.Laanprodukter$ | async"
         [value]="item.key"
         >{{item.value}}</option
       >

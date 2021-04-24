@@ -6,14 +6,8 @@ export type LaanberegningState = StateOfType<{
     saving: boolean;
     error: HttpErrorResponse | null;
   };
-  laanprodukter: Laanprodukt[];
   laanberegninger: Laanberegning[];
 }>;
-
-export interface Laanprodukt {
-  key: string;
-  value: string;
-}
 
 export interface Laanberegning {
   userKey: string;

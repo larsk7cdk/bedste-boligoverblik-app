@@ -33,12 +33,6 @@ export const selectLaanberegningHasError = createSelector(
   (state: fromInterfaces.LaanberegningState) => state.behaviours.error !== null
 );
 
-export const selectLaanprodukter = createSelector(
-  selectLaanberegningState,
-  (state: fromInterfaces.LaanberegningState): fromInterfaces.Laanprodukt[] =>
-    state.laanprodukter
-);
-
 export const selectLaanberegninger = createSelector(
   selectLaanberegningState,
   (state: fromInterfaces.LaanberegningState): fromInterfaces.Laanberegning[] =>

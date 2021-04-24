@@ -7,7 +7,8 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { loadLaanprodukt } from '../../+state/laanberegning.actions';
+import { loadLaanprodukt } from 'src/app/features/laanprodukt/+state/laanprodukt.actions';
+import { LaanproduktFacade } from 'src/app/features/laanprodukt/+state/laanprodukt.facade';
 import { LaanberegningFacade } from '../../+state/laanberegning.facade';
 
 @Component({
@@ -38,11 +39,12 @@ export class LaanberegningOpretComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    public laanproduktFacade: LaanproduktFacade,
     public laanberegningFacade: LaanberegningFacade
   ) {}
 
   ngOnInit(): void {
-    this.laanberegningFacade.Dispatch(loadLaanprodukt());
+    this.laanproduktFacade.Dispatch(loadLaanprodukt());
 
     this._configureForm();
   }

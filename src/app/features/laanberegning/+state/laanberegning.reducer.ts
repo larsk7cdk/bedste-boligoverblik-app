@@ -8,46 +8,11 @@ const initialState: LaanberegningState = {
     saving: false,
     error: null,
   },
-  laanprodukter: [],
   laanberegninger: [],
 };
 
 export const reducer = createReducer(
   initialState,
-
-  on(fromActions.loadLaanprodukt, (state) => {
-    return {
-      ...state,
-      behaviours: {
-        ...state.behaviours,
-        loading: true,
-      },
-    };
-  }),
-
-  on(fromActions.loadLaanproduktSuccess, (state, { laanprodukter }) => {
-    return {
-      ...state,
-      behaviours: {
-        ...state.behaviours,
-        loading: false,
-      },
-      laanprodukter,
-    };
-  }),
-
-  on(fromActions.loadLaanproduktFailed, (state, { error }) => {
-    debugger
-    return {
-      ...state,
-      behaviours: {
-        ...state.behaviours,
-        loading: false,
-        error,
-      },
-      laanberegninger: [],
-    };
-  }),
 
   on(fromActions.loadLaanberegning, (state) => {
     return {

@@ -8,22 +8,20 @@ import { LaanberegningService } from './services/laanberegning.service';
 import { LaanberegningOversigtComponent } from './containers/laanberegning-oversigt/laanberegning-oversigt.component';
 import { LaanberegningOpretComponent } from './containers/laanberegning-opret/laanberegning-opret.component';
 import { SharedModule } from '../shared/shared.module';
-import { LaanproduktService } from './services/laanprodukt.service';
+import { LaanproduktModule } from '../laanprodukt/laanprodukt.module';
 
 @NgModule({
-  declarations: [
-    LaanberegningOversigtComponent,
-    LaanberegningOpretComponent
-  ],
+  declarations: [LaanberegningOversigtComponent, LaanberegningOpretComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
     LaanberegningRoutingModule,
     LaanberegningStateModule,
-    SharedModule
+    SharedModule,
+    LaanproduktModule,
   ],
   exports: [],
-  providers: [LaanproduktService, LaanberegningService],
+  providers: [LaanberegningService],
 })
 export class LaanberegningModule {}
