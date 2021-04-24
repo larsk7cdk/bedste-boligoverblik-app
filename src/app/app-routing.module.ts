@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/bolig/bolig.module').then((m) => m.BoligModule),
   },
+  {
+    path: 'laanberegninger',
+    loadChildren: () =>
+      import('./features/laanberegning/laanberegning.module').then(
+        (m) => m.LaanberegningModule
+      ),
+  },
 ];
 
 @NgModule({

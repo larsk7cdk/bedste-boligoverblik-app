@@ -93,32 +93,6 @@
   {
     "userKey": "lars",
     "vejnavn": "Klydevej",
-    "husnummer": "7",
-    "postnummer": 2650,
-    "x": 12.45821785,
-    "y": 55.6184212,
-    "adresse": "Klydevej 7, 2650 Hvidovre",
-    "partitionKey": "bolig",
-    "rowKey": "da07042c-e313-43a0-a1f0-ece1e12eceee",
-    "timestamp": "2021-04-20T16:37:09.8785928+00:00",
-    "eTag": "W/\"datetime'2021-04-20T16%3A37%3A09.8785928Z'\""
-  },
-  {
-    "userKey": "lars",
-    "vejnavn": "Klydevej",
-    "husnummer": "7",
-    "postnummer": 2650,
-    "x": 12.45821785,
-    "y": 55.6184212,
-    "adresse": "Klydevej 7, 2650 Hvidovre",
-    "partitionKey": "bolig",
-    "rowKey": "df3bc504-4c2c-48b4-8963-30c0c933a005",
-    "timestamp": "2021-04-20T16:50:59.9644942+00:00",
-    "eTag": "W/\"datetime'2021-04-20T16%3A50%3A59.9644942Z'\""
-  },
-  {
-    "userKey": "lars",
-    "vejnavn": "Klydevej",
     "husnummer": "9",
     "postnummer": 2650,
     "x": 12.45847126,

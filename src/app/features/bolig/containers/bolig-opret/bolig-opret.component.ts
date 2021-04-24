@@ -65,7 +65,6 @@ export class BoligOpretComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('onDestroy');
     this.subscriptions.forEach((s) => s.unsubscribe());
   }
 

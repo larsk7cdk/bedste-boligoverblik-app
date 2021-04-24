@@ -1,5 +1,4 @@
 import * as fromActions from './laanberegning.actions';
-import { BoligState } from './bolig.interfaces';
 import { createReducer, on } from '@ngrx/store';
 import { LaanberegningState } from './laanberegning.interfaces';
 

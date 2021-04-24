@@ -6,7 +6,7 @@ import { BoligVisComponent } from './containers/bolig-vis/bolig-vis.component';
 
 const routes: Routes = [
   {
-    path: 'oversigt',
+    path: '',
     component: BoligOversigtComponent,
   },
   {
