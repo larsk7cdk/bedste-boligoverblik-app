@@ -23,14 +23,14 @@ export const reducer = createReducer(
     };
   }),
 
-  on(fromActions.loadLaanberegningSuccess, (state, { laanberegninger }) => {
+  on(fromActions.loadLaanberegningSuccess, (state, { laanberegning }) => {
     return {
       ...state,
       behaviours: {
         ...state.behaviours,
         loading: false,
       },
-      laanberegninger,
+      laanberegning,
     };
   }),
 

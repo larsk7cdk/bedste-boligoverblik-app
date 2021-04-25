@@ -15,7 +15,5 @@ export class BoligVisComponent implements OnInit {
     this.bolig = this.router.getCurrentNavigation().extras.state as Bolig;
   }
 
-  ngOnInit(): void {
-    console.log('bolig', this.bolig);
-  }
+  ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { Bolig, BoligOpret } from './bolig.interfaces';
+import { Bolig, BoligRegistrer } from './bolig.interfaces';
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';
@@ -32,7 +32,7 @@ export const loadBoligFailed = createAction(
 
 export const saveBolig = createAction(
   BoligActionTypes.BOLIG_SAVE,
-  props<{ request: BoligOpret }>()
+  props<{ request: BoligRegistrer }>()
 );
 
 export const saveBoligSuccess = createAction(

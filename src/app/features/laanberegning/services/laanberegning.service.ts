@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
-  LaanberegningOpretRequest,
+  LaanberegningRequest,
   LaanberegningResponse,
 } from './laanberegning.service.interfaces';
 
@@ -11,8 +11,12 @@ import {
 export class LaanberegningService {
   constructor(private httpClient: HttpClient) {}
 
-  getLaanberegning$(userKey: string): Observable<LaanberegningResponse> {
-    const url = `${environment.apiBaseUrl}/laanberegning/${userKey}`;
+  getLaanberegningJyskeBank$(
+    request: LaanberegningRequest
+  ): Observable<LaanberegningResponse> {
+    const url = `${environment.apiBaseUrl}/laanberegning/jyskebank/
+                ?produkt=${request.produkt}&pris=${request.pris}&udbetaling=${request.udbetaling}
+                &loebetid=${request.loebetid}&afdragsfrihed=${request.afdragsfrihed}&loebetidBank=${request.loebetidbank}`;
 
     // if (!environment.production) {
     //   return this.httpClient.get<BoligResponse>(
@@ -21,16 +25,6 @@ export class LaanberegningService {
     // }
 
     return this.httpClient.get<LaanberegningResponse>(url, {
-      withCredentials: true,
-    });
-  }
-
-  saveLaanberegning$(
-    request: LaanberegningOpretRequest
-  ): Observable<LaanberegningResponse> {
-    const url = `${environment.apiBaseUrl}/laanberegning/`;
-
-    return this.httpClient.post<LaanberegningResponse>(url, request, {
       withCredentials: true,
     });
   }

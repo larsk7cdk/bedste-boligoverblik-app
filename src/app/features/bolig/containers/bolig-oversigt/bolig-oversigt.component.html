@@ -12,11 +12,11 @@
   <app-spinner></app-spinner>
 </div>
 
-<div class="table-responsive" *ngIf="boligFacade.BoligIsLoaded$ | async">
+<div class="table-responsive mt-3" *ngIf="boligFacade.BoligIsLoaded$ | async">
   <table class="table table-striped">
     <thead>
       <tr>
-        <th class="w-100">Adresse</th>
+        <th class="w-100 h3">Adresse</th>
         <th></th>
       </tr>
     </thead>
@@ -26,7 +26,7 @@
         <td>
           <button
             class="btn btn-outline-dark td--button"
-            (click)="onLaanberegninger(item)"
+            (click)="onVisBolig(item)"
           >
             Vis bolig
           </button>
@@ -34,8 +34,8 @@
       </tr>
     </tbody>
     <tfoot>
-      <button class="btn btn-outline-dark my-3" [routerLink]="['/boliger/opret']">
-        Opret ny bolig
+      <button class="btn btn-outline-dark my-3" [routerLink]="['/boliger/registrer']">
+        Registrer ny bolig
       </button>
     </tfoot>
   </table>

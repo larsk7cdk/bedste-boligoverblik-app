@@ -1,23 +1,23 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { delay, skipWhile } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import {
   AbstractControl,
   FormBuilder,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { delay, first, skipWhile, takeUntil, takeWhile } from 'rxjs/operators';
 import { saveBolig } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
-import { BoligOpret } from '../../+state/bolig.interfaces';
+import { BoligRegistrer } from '../../+state/bolig.interfaces';
 
 @Component({
-  selector: 'app-bolig-opret',
-  templateUrl: './bolig-opret.component.html',
-  styleUrls: ['./bolig-opret.component.scss'],
+  selector: 'app-bolig-reigstrer',
+  templateUrl: './bolig-registrer.component.html',
+  styleUrls: ['./bolig-registrer.component.scss'],
 })
-export class BoligOpretComponent implements OnInit, OnDestroy {
+export class BoligRegistrerComponent implements OnInit, OnDestroy {
   form: FormGroup = new FormGroup({});
   subscriptions: Subscription[] = [];
 
@@ -68,8 +68,8 @@ export class BoligOpretComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach((s) => s.unsubscribe());
   }
 
-  onOpret(): void {
-    const request: BoligOpret = {
+  onRegistrer(): void {
+    const request: BoligRegistrer = {
       userKey: this.user.value,
       vejnavn: this.vejnavn.value,
       husnummer: this.husnummer.value,

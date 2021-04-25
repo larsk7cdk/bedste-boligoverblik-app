@@ -23,7 +23,7 @@ import { LaanStateModule } from './+state/laan.state.module';
     LaanproduktModule,
     LaanberegningModule,
   ],
-  exports: [],
+  exports: [LaanOversigtComponent],
   providers: [LaanService],
 })
 export class LaanModule {}

@@ -17,7 +17,7 @@ export class BoligOversigtComponent implements OnInit {
     this.boligFacade.Dispatch(loadBolig({ userKey: 'lars' }));
   }
 
-  onLaanberegninger($event: Bolig): void {
+  onVisBolig($event: Bolig): void {
     this.router.navigate(['boliger/vis'], { state: $event });
   }
 }

@@ -22,7 +22,7 @@ export interface Bolig {
   timestamp: Date;
 }
 
-export interface BoligOpret {
+export interface BoligRegistrer {
   userKey: string;
   vejnavn: string;
   husnummer: string;

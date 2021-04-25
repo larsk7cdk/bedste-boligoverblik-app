@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { BoligOpretComponent } from './containers/bolig-opret/bolig-opret.component';
 import { BoligOversigtComponent } from './containers/bolig-oversigt/bolig-oversigt.component';
+import { BoligRegistrerComponent } from './containers/bolig-registrer/bolig-registrer.component';
 import { BoligVisComponent } from './containers/bolig-vis/bolig-vis.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: BoligOversigtComponent,
   },
   {
-    path: 'opret',
-    component: BoligOpretComponent,
+    path: 'registrer',
+    component: BoligRegistrerComponent,
   },
   {
     path: 'vis',

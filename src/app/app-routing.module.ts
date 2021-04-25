@@ -13,11 +13,9 @@ const routes: Routes = [
       import('./features/bolig/bolig.module').then((m) => m.BoligModule),
   },
   {
-    path: 'laanberegninger',
+    path: 'laan',
     loadChildren: () =>
-      import('./features/laanberegning/laanberegning.module').then(
-        (m) => m.LaanberegningModule
-      ),
+      import('./features/laan/laan.module').then((m) => m.LaanModule),
   },
 ];
 
