@@ -1,12 +1,4 @@
-<h1>
-  <i-bs
-    name="arrow-left-circle"
-    width="2rem"
-    height="2rem"
-    [routerLink]="['/']"
-  ></i-bs>
-  Boliger
-</h1>
+<h1>Boliger</h1>
 
 <div class="text-center" *ngIf="(boligFacade.BoligIsLoading$ | async)">
   <app-spinner></app-spinner>
@@ -34,7 +26,10 @@
       </tr>
     </tbody>
     <tfoot>
-      <button class="btn btn-outline-dark my-3" [routerLink]="['/boliger/registrer']">
+      <button
+        class="btn btn-outline-dark my-3"
+        [routerLink]="['/boliger/registrer']"
+      >
         Registrer bolig
       </button>
     </tfoot>
