@@ -1,7 +1,8 @@
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';
-import { Laan, LaanOpret } from './laan.interfaces';
+import { Laan,  LaanRegistrer } from './laan.interfaces';
+import { LaanRegistrerRequest } from '../services/laan.service.interfaces';
 
 const enum LaanActionTypes {
   LAAN_LOAD = '[Laanberegning - Load laan]',
@@ -32,7 +33,7 @@ export const loadLaanFailed = createAction(
 
 export const saveLaan = createAction(
   LaanActionTypes.LAAN_SAVE,
-  props<{ request: LaanOpret }>()
+  props<{ request: LaanRegistrerRequest }>()
 );
 
 export const saveLaanSuccess = createAction(

@@ -4,6 +4,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';
 
 const enum BoligActionTypes {
+  BOLIG_SET_SELECTED = '[Bolig - Set selected bolig]',
+
   BOLIG_LOAD = '[Bolig - Load bolig]',
   BOLIG_LOAD_SUCCESS = '[Bolig - Load bolig Success]',
   BOLIG_LOAD_FAILED = '[Bolig - Load bolig Failure]',
@@ -14,6 +16,11 @@ const enum BoligActionTypes {
 }
 
 export type BoligDispatchableActions = TypedAction<BoligActionTypes>;
+
+export const setSelectedBolig = createAction(
+  BoligActionTypes.BOLIG_SET_SELECTED,
+  props<{ bolig: Bolig }>()
+);
 
 export const loadBolig = createAction(
   BoligActionTypes.BOLIG_LOAD,

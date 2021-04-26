@@ -5,15 +5,16 @@ import { of } from 'rxjs';
 import * as fromActions from './bolig.actions';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BoligService } from '../services/bolig.service';
-import {
-  BoligOpretRequest,
-  BoligResponse,
-} from '../services/bolig.service.interfaces';
-import { Bolig } from './bolig.interfaces';
+import { BoligResponse } from '../services/bolig.service.interfaces';
+import { BoligMapperService } from './bolig.mapper.service';
 
 @Injectable()
 export class BoligEffects {
-  constructor(private actions$: Actions, private boligService: BoligService) {}
+  constructor(
+    private actions$: Actions,
+    private boligService: BoligService,
+    private boligMapperService: BoligMapperService
+  ) {}
 
   loadBolig$ = createEffect(() =>
     this.actions$.pipe(
@@ -22,22 +23,7 @@ export class BoligEffects {
         this.boligService.getBolig$(action.userKey).pipe(
           map((response: BoligResponse) =>
             fromActions.loadBoligSuccess({
-              boliger: response.map(
-                (m): Bolig => {
-                  return {
-                    userKey: m.userKey,
-                    vejnavn: m.vejnavn,
-                    husnummer: m.husnummer,
-                    postnummer: m.postnummer,
-                    adresse: m.adresse,
-                    x: m.x,
-                    y: m.y,
-                    partitionKey: m.partitionKey,
-                    rowKey: m.rowKey,
-                    timestamp: m.timestamp,
-                  };
-                }
-              ),
+              boliger: this.boligMapperService.mapToBolig(response),
             })
           ),
           catchError((error: HttpErrorResponse) =>
@@ -56,12 +42,9 @@ export class BoligEffects {
     this.actions$.pipe(
       ofType(fromActions.saveBolig),
       exhaustMap((action) => {
-        const request: BoligOpretRequest = {
-          userKey: action.request.userKey,
-          vejnavn: action.request.vejnavn,
-          husnummer: action.request.husnummer,
-          postnummer: action.request.postnummer,
-        };
+        const request = this.boligMapperService.mapToBoligOpretRequest(
+          action.request
+        );
 
         return this.boligService
           .saveBolig$(request)

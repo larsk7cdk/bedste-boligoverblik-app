@@ -14,15 +14,13 @@ export class LaanberegningService {
   getLaanberegningJyskeBank$(
     request: LaanberegningRequest
   ): Observable<LaanberegningResponse> {
-    const url = `${environment.apiBaseUrl}/laanberegning/jyskebank/
-                ?produkt=${request.produkt}&pris=${request.pris}&udbetaling=${request.udbetaling}
-                &loebetid=${request.loebetid}&afdragsfrihed=${request.afdragsfrihed}&loebetidBank=${request.loebetidbank}`;
+    const url = `${environment.apiBaseUrl}/laanberegning/jyskebank?laanprodukt=${request.laanprodukt}&pris=${request.pris}&udbetaling=${request.udbetaling}&loebetid=${request.loebetid}&afdragsfrihed=${request.afdragsfrihed}&loebetidBank=${request.loebetidbank}`;
 
-    // if (!environment.production) {
-    //   return this.httpClient.get<BoligResponse>(
-    //     './assets/mocks/boligresponse.json'
-    //   );
-    // }
+    if (!environment.production) {
+      return this.httpClient.get<LaanberegningResponse>(
+        './assets/mocks/laanberegningresponse.json'
+      );
+    }
 
     return this.httpClient.get<LaanberegningResponse>(url, {
       withCredentials: true,

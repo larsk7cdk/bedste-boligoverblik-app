@@ -9,20 +9,13 @@
 </h1>
 
 <section class="mt-3">
-  <h3>{{bolig.adresse}}</h3>
+  <h3>{{(bolig$ | async).adresse}}</h3>
 
   <div style="height: 250px; width: 100%; border: 1px solid gray;">
     Street view
   </div>
 </section>
 
-<section class="mt-3">
-  <h3>Lån i boligen</h3>
+<section class="mt-5">
   <app-laan-oversigt></app-laan-oversigt>
-
-  <div>
-    <button class="btn btn-outline-dark my-3" [routerLink]="['/laan']">
-      Registrer nyt lån
-    </button>
-  </div>
 </section>

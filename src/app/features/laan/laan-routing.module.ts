@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LaanOpretComponent } from './containers/laan-opret/laan-opret.component';
 import { LaanOversigtComponent } from './containers/laan-oversigt/laan-oversigt.component';
+import { LaanRegistrerComponent } from './containers/laan-registrer/laan-registrer.component';
 
 const routes: Routes = [
   {
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: LaanOversigtComponent,
   },
   {
-    path: 'opret',
-    component: LaanOpretComponent,
+    path: 'registrer',
+    component: LaanRegistrerComponent,
   },
 ];
 

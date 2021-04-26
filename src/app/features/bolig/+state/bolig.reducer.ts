@@ -8,11 +8,19 @@ const initialState: BoligState = {
     saving: false,
     error: null,
   },
+  boligSelected: null,
   boliger: [],
 };
 
 export const reducer = createReducer(
   initialState,
+
+  on(fromActions.setSelectedBolig, (state, { bolig }) => {
+    return {
+      ...state,
+      boligSelected: bolig,
+    };
+  }),
 
   on(fromActions.loadBolig, (state) => {
     return {

@@ -15,7 +15,7 @@ export interface BoligResponse
     eTag: string;
   }> {}
 
-export interface BoligOpretRequest {
+export interface BoligRegistrerRequest {
   userKey: string;
   vejnavn: string;
   husnummer: string;

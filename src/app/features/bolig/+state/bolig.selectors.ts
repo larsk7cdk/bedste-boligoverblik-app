@@ -32,6 +32,11 @@ export const selectBoligHasError = createSelector(
   (state: fromInterfaces.BoligState) => state.behaviours.error !== null
 );
 
+export const selectBoligSelected = createSelector(
+  selectBoligState,
+  (state: fromInterfaces.BoligState): fromInterfaces.Bolig => state.boligSelected
+);
+
 export const selectBoliger = createSelector(
   selectBoligState,
   (state: fromInterfaces.BoligState): fromInterfaces.Bolig[] => state.boliger

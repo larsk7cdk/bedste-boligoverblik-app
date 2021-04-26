@@ -2,35 +2,31 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {
-  LaanberegningOpretRequest,
-  LaanberegningResponse,
-} from './laan.service.interfaces';
+import { LaanRegistrerRequest } from './laan.service.interfaces';
+import { LaanRegistrer } from '../+state/laan.interfaces';
 
 @Injectable()
 export class LaanService {
   constructor(private httpClient: HttpClient) {}
 
-  getLaan$(userKey: string): Observable<LaanberegningResponse> {
-    const url = `${environment.apiBaseUrl}/laanberegning/${userKey}`;
+  // getLaan$(request: LaanRegistrerRequest): Observable<> {
+  //   const url = `${environment.apiBaseUrl}/laanberegning/${userKey}`;
 
-    // if (!environment.production) {
-    //   return this.httpClient.get<BoligResponse>(
-    //     './assets/mocks/boligresponse.json'
-    //   );
-    // }
+  //   // if (!environment.production) {
+  //   //   return this.httpClient.get<BoligResponse>(
+  //   //     './assets/mocks/boligresponse.json'
+  //   //   );
+  //   // }
 
-    return this.httpClient.get<LaanberegningResponse>(url, {
-      withCredentials: true,
-    });
-  }
+  //   return this.httpClient.get<LaanberegningResponse>(url, {
+  //     withCredentials: true,
+  //   });
+  // }
 
-  saveLaan$(
-    request: LaanberegningOpretRequest
-  ): Observable<LaanberegningResponse> {
-    const url = `${environment.apiBaseUrl}/laanberegning/`;
+  saveLaan$(request: LaanRegistrerRequest): Observable<void> {
+    const url = `${environment.apiBaseUrl}/laan`;
 
-    return this.httpClient.post<LaanberegningResponse>(url, request, {
+    return this.httpClient.post<void>(url, request, {
       withCredentials: true,
     });
   }

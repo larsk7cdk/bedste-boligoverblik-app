@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { loadBolig } from '../../+state/bolig.actions';
+import { loadBolig, setSelectedBolig } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
 import { Bolig } from '../../+state/bolig.interfaces';
 
@@ -10,14 +10,15 @@ import { Bolig } from '../../+state/bolig.interfaces';
   styleUrls: ['./bolig-oversigt.component.scss'],
 })
 export class BoligOversigtComponent implements OnInit {
-  constructor(private router: Router, public boligFacade: BoligFacade) {
-      }
+  constructor(private router: Router, public boligFacade: BoligFacade) {}
 
   ngOnInit(): void {
     this.boligFacade.Dispatch(loadBolig({ userKey: 'lars' }));
   }
 
   onVisBolig($event: Bolig): void {
-    this.router.navigate(['boliger/vis'], { state: $event });
+    this.boligFacade.Dispatch(setSelectedBolig({ bolig: $event }));
+    this.router.navigate(['boliger/vis']);
+    // this.router.navigate(['boliger/vis'], { state: $event });
   }
 }

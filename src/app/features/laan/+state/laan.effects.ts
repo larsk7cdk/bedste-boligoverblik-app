@@ -5,6 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { LaanService } from '../services/laan.service';
+import { LaanRegistrerRequest } from '../services/laan.service.interfaces';
 @Injectable()
 export class LaanEffects {
   constructor(private actions$: Actions, private laanService: LaanService) {}
@@ -40,25 +41,21 @@ export class LaanEffects {
   //   )
   // );
 
-  // saveLaanberegning$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(fromActions.saveLaan),
-  //     exhaustMap((action) => {
-  //       const request: LaanbOpretRequest = {
-  //         userKey: action.request.userKey,
-  //       };
-
-  //       return this.laanService
-  //         .saveLaan$(request)
-  //         .pipe(map(() => fromActions.saveLaanSuccess()));
-  //     }),
-  //     catchError((error: HttpErrorResponse) =>
-  //       of(
-  //         fromActions.saveLaanFailed({
-  //           error,
-  //         })
-  //       )
-  //     )
-  //   )
-  //);
+  saveLaanberegning$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromActions.saveLaan),
+      exhaustMap((action) => {
+        return this.laanService
+          .saveLaan$(action.request)
+          .pipe(map(() => fromActions.saveLaanSuccess()));
+      }),
+      catchError((error: HttpErrorResponse) =>
+        of(
+          fromActions.saveLaanFailed({
+            error,
+          })
+        )
+      )
+    )
+  );
 }

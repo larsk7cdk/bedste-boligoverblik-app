@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { BoligFacade } from './bolig.facade';
+import { BoligMapperService } from './bolig.mapper.service';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,6 @@ import { BoligFacade } from './bolig.facade';
     StoreModule.forFeature(BOLIG_FEATURE_NAME, fromReducer.reducer),
     EffectsModule.forFeature([BoligEffects]),
   ],
-  providers: [BoligFacade],
+  providers: [BoligFacade, BoligMapperService],
 })
 export class BoligStateModule {}

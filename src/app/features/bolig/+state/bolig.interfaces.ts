@@ -6,11 +6,11 @@ export type BoligState = StateOfType<{
     saving: boolean;
     error: HttpErrorResponse | null;
   };
+  boligSelected: Bolig;
   boliger: Bolig[];
 }>;
 
 export interface Bolig {
-  userKey: string;
   vejnavn: string;
   husnummer: string;
   postnummer: number;
@@ -23,7 +23,6 @@ export interface Bolig {
 }
 
 export interface BoligRegistrer {
-  userKey: string;
   vejnavn: string;
   husnummer: string;
   postnummer: number;

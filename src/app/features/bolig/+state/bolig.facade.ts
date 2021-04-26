@@ -33,6 +33,11 @@ export class BoligFacade {
     select(fromSelectors.selectBoligHasError)
   );
 
+  public BoligSelected$ = this.store.pipe(
+    distinctUntilChanged(),
+    select(fromSelectors.selectBoligSelected)
+  );
+
   public Boliger$ = this.store.pipe(
     distinctUntilChanged(),
     select(fromSelectors.selectBoliger)

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { BoligFacade } from '../../+state/bolig.facade';
 import { Bolig } from '../../+state/bolig.interfaces';
 
@@ -9,11 +10,13 @@ import { Bolig } from '../../+state/bolig.interfaces';
   styleUrls: ['./bolig-vis.component.scss'],
 })
 export class BoligVisComponent implements OnInit {
-  bolig: Bolig;
+  bolig$: Observable<Bolig>;
 
   constructor(private router: Router, public boligFacade: BoligFacade) {
-    this.bolig = this.router.getCurrentNavigation().extras.state as Bolig;
+    // this.bolig = this.router.getCurrentNavigation().extras.state as Bolig;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bolig$ = this.boligFacade.BoligSelected$;
+  }
 }

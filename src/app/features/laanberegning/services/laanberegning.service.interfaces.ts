@@ -1,5 +1,5 @@
 export interface LaanberegningRequest {
-  produkt: string;
+  laanprodukt: string;
   pris: string;
   udbetaling: string;
   loebetid: string;

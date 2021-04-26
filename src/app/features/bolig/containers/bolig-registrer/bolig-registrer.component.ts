@@ -22,11 +22,6 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
   /* getters */
-  /* FJERNES NÅR LOGIN ER PÅ PLADS */
-  get user(): AbstractControl {
-    return this.form.get('user');
-  }
-
   get vejnavn(): AbstractControl {
     return this.form.get('vejnavn');
   }
@@ -57,7 +52,7 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
         skipWhile((s) => s === false),
         delay(500)
       ).subscribe(() => {
-        this.router.navigate(['/boliger/oversigt']);
+        this.router.navigate(['/boliger']);
       })
     );
 
@@ -70,7 +65,6 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
 
   onRegistrer(): void {
     const request: BoligRegistrer = {
-      userKey: this.user.value,
       vejnavn: this.vejnavn.value,
       husnummer: this.husnummer.value,
       postnummer: this.postnummer.value,
@@ -82,7 +76,6 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
   _configureForm(): void {
     this.form = new FormGroup(
       this.fb.group({
-        user: ['', Validators.required],
         vejnavn: ['', Validators.required],
         husnummer: ['', Validators.required],
         postnummer: ['', Validators.required],

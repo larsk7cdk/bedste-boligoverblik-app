@@ -9,16 +9,10 @@ export class LaanproduktService {
   constructor(private httpClient: HttpClient) {}
 
   getLaanprodukter$(): Observable<LaanproduktResponse> {
-    const url = `${environment.apiBaseUrl}/produkt`;
+    const url = `${environment.apiBaseUrl}/LaanProdukt/jyskebank`;
 
-    const data = this.httpClient.get<LaanproduktResponse>(url, {
+    return this.httpClient.get<LaanproduktResponse>(url, {
       withCredentials: true,
     });
-
-    return data;
-
-    // return this.httpClient.get<LaanProduktResponse>(url, {
-    //   withCredentials: true,
-    // });
   }
 }

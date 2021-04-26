@@ -16,6 +16,6 @@ export interface Laan {
   timestamp: Date;
 }
 
-export interface LaanOpret {
-  userKey: string;
+export interface LaanRegistrer {
+
 }

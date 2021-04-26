@@ -1,0 +1,837 @@
+{
+  "realkreditlaan": {
+    "afdragsfrihedAar": 10,
+    "restgaeld": 2816000,
+    "loebetid": 30.25,
+    "mdlYdelseFoerSkat": 5807.62,
+    "mdlYdelseEfterSkat": 4338.3,
+    "mdlAfdrag": 0.0,
+    "tilbagebetaling": 4148547.95,
+    "aaopFoerSkatPct": 2.48,
+    "aaopEfterSkatPct": 1.87,
+    "debitorRentePct": 1.508,
+    "betalinger": [
+      {
+        "dato": "2021-07-01",
+        "ydelseFoerSkat": 12636.37,
+        "ydelseEfterSkat": 9439.37,
+        "afdrag": 0,
+        "renter": 7658.9,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2021-10-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2022-01-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2022-04-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2022-07-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2022-10-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2023-01-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2023-04-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2023-07-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2023-10-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2024-01-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2024-04-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2024-07-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2024-10-01",
+        "ydelseFoerSkat": 17422.87,
+        "ydelseEfterSkat": 13014.88,
+        "afdrag": 0,
+        "renter": 10560,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2025",
+        "ydelseFoerSkat": 69691.48,
+        "ydelseEfterSkat": 52059.52,
+        "afdrag": 0,
+        "renter": 42240,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2026",
+        "ydelseFoerSkat": 69691.48,
+        "ydelseEfterSkat": 52059.52,
+        "afdrag": 0,
+        "renter": 42240,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2027",
+        "ydelseFoerSkat": 69691.48,
+        "ydelseEfterSkat": 52059.52,
+        "afdrag": 0,
+        "renter": 42240,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2028",
+        "ydelseFoerSkat": 69691.48,
+        "ydelseEfterSkat": 52059.52,
+        "afdrag": 0,
+        "renter": 42240,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2029",
+        "ydelseFoerSkat": 69691.48,
+        "ydelseEfterSkat": 52059.52,
+        "afdrag": 0,
+        "renter": 42240,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2030",
+        "ydelseFoerSkat": 69691.48,
+        "ydelseEfterSkat": 52059.52,
+        "afdrag": 0,
+        "renter": 42240,
+        "restgaeld": 2816000
+      },
+      {
+        "dato": "2031",
+        "ydelseFoerSkat": 124177.68,
+        "ydelseEfterSkat": 107876.52,
+        "afdrag": 59746.25,
+        "renter": 42128.19,
+        "restgaeld": 2756253.75
+      },
+      {
+        "dato": "2032",
+        "ydelseFoerSkat": 178112.61,
+        "ydelseEfterSkat": 163623.33,
+        "afdrag": 120842.69,
+        "renter": 40666.19,
+        "restgaeld": 2635411.06
+      },
+      {
+        "dato": "2033",
+        "ydelseFoerSkat": 177368.35,
+        "ydelseEfterSkat": 163528.54,
+        "afdrag": 122665.56,
+        "renter": 38843.32,
+        "restgaeld": 2512745.5
+      },
+      {
+        "dato": "2034",
+        "ydelseFoerSkat": 176612.86,
+        "ydelseEfterSkat": 163432.33,
+        "afdrag": 124515.91,
+        "renter": 36992.97,
+        "restgaeld": 2388229.59
+      },
+      {
+        "dato": "2035",
+        "ydelseFoerSkat": 175845.98,
+        "ydelseEfterSkat": 163334.68,
+        "afdrag": 126394.19,
+        "renter": 35114.69,
+        "restgaeld": 2261835.4
+      },
+      {
+        "dato": "2036",
+        "ydelseFoerSkat": 175067.52,
+        "ydelseEfterSkat": 163235.54,
+        "afdrag": 128300.79,
+        "renter": 33208.09,
+        "restgaeld": 2133534.61
+      },
+      {
+        "dato": "2037",
+        "ydelseFoerSkat": 174277.32,
+        "ydelseEfterSkat": 163134.91,
+        "afdrag": 130236.16,
+        "renter": 31272.72,
+        "restgaeld": 2003298.45
+      },
+      {
+        "dato": "2038",
+        "ydelseFoerSkat": 173475.21,
+        "ydelseEfterSkat": 163032.76,
+        "afdrag": 132200.71,
+        "renter": 29308.17,
+        "restgaeld": 1871097.74
+      },
+      {
+        "dato": "2039",
+        "ydelseFoerSkat": 172661.0,
+        "ydelseEfterSkat": 162929.08,
+        "afdrag": 134194.91,
+        "renter": 27313.97,
+        "restgaeld": 1736902.83
+      },
+      {
+        "dato": "2040",
+        "ydelseFoerSkat": 171834.49,
+        "ydelseEfterSkat": 162823.81,
+        "afdrag": 136219.17,
+        "renter": 25289.71,
+        "restgaeld": 1600683.66
+      },
+      {
+        "dato": "2041",
+        "ydelseFoerSkat": 170995.54,
+        "ydelseEfterSkat": 162716.99,
+        "afdrag": 138273.99,
+        "renter": 23234.89,
+        "restgaeld": 1462409.67
+      },
+      {
+        "dato": "2042",
+        "ydelseFoerSkat": 170143.92,
+        "ydelseEfterSkat": 162608.54,
+        "afdrag": 140359.79,
+        "renter": 21149.09,
+        "restgaeld": 1322049.88
+      },
+      {
+        "dato": "2043",
+        "ydelseFoerSkat": 169279.45,
+        "ydelseEfterSkat": 162498.44,
+        "afdrag": 142477.07,
+        "renter": 19031.81,
+        "restgaeld": 1179572.81
+      },
+      {
+        "dato": "2044",
+        "ydelseFoerSkat": 168401.94,
+        "ydelseEfterSkat": 162386.7,
+        "afdrag": 144626.27,
+        "renter": 16882.61,
+        "restgaeld": 1034946.54
+      },
+      {
+        "dato": "2045",
+        "ydelseFoerSkat": 167511.2,
+        "ydelseEfterSkat": 162273.27,
+        "afdrag": 146807.89,
+        "renter": 14700.99,
+        "restgaeld": 888138.65
+      },
+      {
+        "dato": "2046",
+        "ydelseFoerSkat": 166607.01,
+        "ydelseEfterSkat": 162158.12,
+        "afdrag": 149022.44,
+        "renter": 12486.44,
+        "restgaeld": 739116.21
+      },
+      {
+        "dato": "2047",
+        "ydelseFoerSkat": 165689.19,
+        "ydelseEfterSkat": 162041.22,
+        "afdrag": 151270.36,
+        "renter": 10238.52,
+        "restgaeld": 587845.85
+      },
+      {
+        "dato": "2048",
+        "ydelseFoerSkat": 164757.52,
+        "ydelseEfterSkat": 161922.58,
+        "afdrag": 153552.23,
+        "renter": 7956.65,
+        "restgaeld": 434293.62
+      },
+      {
+        "dato": "2049",
+        "ydelseFoerSkat": 163811.81,
+        "ydelseEfterSkat": 161802.16,
+        "afdrag": 155868.51,
+        "renter": 5640.37,
+        "restgaeld": 278425.11
+      },
+      {
+        "dato": "2050",
+        "ydelseFoerSkat": 162851.82,
+        "ydelseEfterSkat": 161679.9,
+        "afdrag": 158219.72,
+        "renter": 3289.16,
+        "restgaeld": 120205.39
+      },
+      {
+        "dato": "2051",
+        "ydelseFoerSkat": 121782.97,
+        "ydelseEfterSkat": 121383.84,
+        "afdrag": 120205.39,
+        "renter": 902.58,
+        "restgaeld": 0
+      }
+    ]
+  },
+  "banklaan": {
+    "restgaeld": 568000,
+    "loebetid": 20,
+    "mdlYdelseFoerSkat": 4275.0,
+    "mdlYdelseEfterSkat": 3557.71,
+    "mdlAfdrag": 1439.87,
+    "tilbagebetaling": 1013708.84,
+    "aaopFoerSkatPct": 7.13,
+    "aaopEfterSkatPct": 5.37,
+    "debitorRentePct": 6.66,
+    "betalinger": [
+      {
+        "dato": "2021-06-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2611.58,
+        "afdrag": -2299.79,
+        "renter": 6574.79,
+        "restgaeld": 570299.79
+      },
+      {
+        "dato": "2021-07-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 566024.79
+      },
+      {
+        "dato": "2021-08-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 561749.79
+      },
+      {
+        "dato": "2021-09-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 1928.61,
+        "afdrag": -4999.26,
+        "renter": 9274.26,
+        "restgaeld": 566749.05
+      },
+      {
+        "dato": "2021-10-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 562474.05
+      },
+      {
+        "dato": "2021-11-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 558199.05
+      },
+      {
+        "dato": "2021-12-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 1943.52,
+        "afdrag": -4940.33,
+        "renter": 9215.33,
+        "restgaeld": 563139.38
+      },
+      {
+        "dato": "2022-01-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 558864.38
+      },
+      {
+        "dato": "2022-02-28",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 554589.38
+      },
+      {
+        "dato": "2022-03-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2008.84,
+        "afdrag": -4682.14,
+        "renter": 8957.14,
+        "restgaeld": 559271.52
+      },
+      {
+        "dato": "2022-04-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 554996.52
+      },
+      {
+        "dato": "2022-05-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 550721.52
+      },
+      {
+        "dato": "2022-06-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 1999.52,
+        "afdrag": -4718.98,
+        "renter": 8993.98,
+        "restgaeld": 555440.5
+      },
+      {
+        "dato": "2022-07-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 551165.5
+      },
+      {
+        "dato": "2022-08-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 546890.5
+      },
+      {
+        "dato": "2022-09-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 1990.2,
+        "afdrag": -4755.82,
+        "renter": 9030.82,
+        "restgaeld": 551646.32
+      },
+      {
+        "dato": "2022-10-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 547371.32
+      },
+      {
+        "dato": "2022-11-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 543096.32
+      },
+      {
+        "dato": "2022-12-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2006.12,
+        "afdrag": -4692.89,
+        "renter": 8967.89,
+        "restgaeld": 547789.21
+      },
+      {
+        "dato": "2023-01-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 543514.21
+      },
+      {
+        "dato": "2023-02-28",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 539239.21
+      },
+      {
+        "dato": "2023-03-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2071.09,
+        "afdrag": -4436.12,
+        "renter": 8711.12,
+        "restgaeld": 543675.33
+      },
+      {
+        "dato": "2023-04-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 539400.33
+      },
+      {
+        "dato": "2023-05-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 535125.33
+      },
+      {
+        "dato": "2023-06-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2063.47,
+        "afdrag": -4466.24,
+        "renter": 8741.24,
+        "restgaeld": 539591.57
+      },
+      {
+        "dato": "2023-07-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 535316.57
+      },
+      {
+        "dato": "2023-08-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 531041.57
+      },
+      {
+        "dato": "2023-09-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2055.9,
+        "afdrag": -4496.15,
+        "renter": 8771.15,
+        "restgaeld": 535537.72
+      },
+      {
+        "dato": "2023-10-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 531262.72
+      },
+      {
+        "dato": "2023-11-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 526987.72
+      },
+      {
+        "dato": "2023-12-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2072.89,
+        "afdrag": -4428.98,
+        "renter": 8703.98,
+        "restgaeld": 531416.7
+      },
+      {
+        "dato": "2024-01-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 527141.7
+      },
+      {
+        "dato": "2024-02-29",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 522866.7
+      },
+      {
+        "dato": "2024-03-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2119.57,
+        "afdrag": -4244.5,
+        "renter": 8519.5,
+        "restgaeld": 527111.2
+      },
+      {
+        "dato": "2024-04-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 522836.2
+      },
+      {
+        "dato": "2024-05-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 518561.2
+      },
+      {
+        "dato": "2024-06-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2137.24,
+        "afdrag": -4174.66,
+        "renter": 8449.66,
+        "restgaeld": 522735.86
+      },
+      {
+        "dato": "2024-07-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 518460.86
+      },
+      {
+        "dato": "2024-08-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 514185.86
+      },
+      {
+        "dato": "2024-09-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2131.64,
+        "afdrag": -4196.79,
+        "renter": 8471.79,
+        "restgaeld": 518382.65
+      },
+      {
+        "dato": "2024-10-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 514107.65
+      },
+      {
+        "dato": "2024-11-30",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 4275,
+        "afdrag": 4275,
+        "renter": 0,
+        "restgaeld": 509832.65
+      },
+      {
+        "dato": "2024-12-31",
+        "ydelseFoerSkat": 4275,
+        "ydelseEfterSkat": 2149.83,
+        "afdrag": -4124.9,
+        "renter": 8399.9,
+        "restgaeld": 513957.55
+      },
+      {
+        "dato": "2025",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 43033.49,
+        "afdrag": 18626.02,
+        "renter": 32673.98,
+        "restgaeld": 495331.53
+      },
+      {
+        "dato": "2026",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 43347.27,
+        "afdrag": 19866.28,
+        "renter": 31433.72,
+        "restgaeld": 475465.25
+      },
+      {
+        "dato": "2027",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 43682.02,
+        "afdrag": 21189.4,
+        "renter": 30110.6,
+        "restgaeld": 454275.85
+      },
+      {
+        "dato": "2028",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 44038.12,
+        "afdrag": 22596.89,
+        "renter": 28703.11,
+        "restgaeld": 431678.96
+      },
+      {
+        "dato": "2029",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 44419.89,
+        "afdrag": 24105.86,
+        "renter": 27194.14,
+        "restgaeld": 407573.1
+      },
+      {
+        "dato": "2030",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 44826.0,
+        "afdrag": 25711.13,
+        "renter": 25588.87,
+        "restgaeld": 381861.97
+      },
+      {
+        "dato": "2031",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 45259.25,
+        "afdrag": 27423.53,
+        "renter": 23876.47,
+        "restgaeld": 354438.44
+      },
+      {
+        "dato": "2032",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 45720.4,
+        "afdrag": 29246.29,
+        "renter": 22053.71,
+        "restgaeld": 325192.15
+      },
+      {
+        "dato": "2033",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 46214.19,
+        "afdrag": 31197.99,
+        "renter": 20102.01,
+        "restgaeld": 293994.16
+      },
+      {
+        "dato": "2034",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 46739.84,
+        "afdrag": 33275.67,
+        "renter": 18024.33,
+        "restgaeld": 260718.49
+      },
+      {
+        "dato": "2035",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 47300.55,
+        "afdrag": 35491.88,
+        "renter": 15808.12,
+        "restgaeld": 225226.61
+      },
+      {
+        "dato": "2036",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 47897.66,
+        "afdrag": 37852.05,
+        "renter": 13447.95,
+        "restgaeld": 187374.56
+      },
+      {
+        "dato": "2037",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 48536.42,
+        "afdrag": 40376.78,
+        "renter": 10923.22,
+        "restgaeld": 146997.78
+      },
+      {
+        "dato": "2038",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 49216.76,
+        "afdrag": 43065.85,
+        "renter": 8234.15,
+        "restgaeld": 103931.93
+      },
+      {
+        "dato": "2039",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 49942.42,
+        "afdrag": 45934.09,
+        "renter": 5365.91,
+        "restgaeld": 57997.84
+      },
+      {
+        "dato": "2040",
+        "ydelseFoerSkat": 51300,
+        "ydelseEfterSkat": 50715.53,
+        "afdrag": 48989.85,
+        "renter": 2310.15,
+        "restgaeld": 9007.99
+      },
+      {
+        "dato": "2041",
+        "ydelseFoerSkat": 9083.84,
+        "ydelseEfterSkat": 9064.65,
+        "afdrag": 9007.99,
+        "renter": 75.85,
+        "restgaeld": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+<h1>
+  <i-bs
+    name="arrow-left-circle"
+    width="2rem"
+    height="2rem"
+    [routerLink]="['/boliger/vis']"
+  ></i-bs>
+  Registrer lån
+</h1>
+
+<form novalidate autocomplete="off" [formGroup]="form">
+  <div class="form-group mt-3">
+    <label for="laanproduktSelect">Lån produkt</label>
+    <select
+      id="laanproduktSelect"
+      class="form-select"
+      formControlName="laanprodukt"
+    >
+      <option
+        *ngFor="let item of laanproduktFacade.Laanprodukter$ | async"
+        [value]="item.key"
+        >{{item.value}}</option
+      >
+    </select>
+  </div>
+
+  <div class="form-group mt-3">
+    <label for="prisInput">Pris</label>
+    <input
+      formControlName="pris"
+      type="text"
+      class="form-control"
+      id="prisInput"
+      placeholder="Indtast pris"
+    />
+  </div>
+
+  <div class="form-group mt-3">
+    <label for="udbetalingInput">Udbetaling</label>
+    <input
+      formControlName="udbetaling"
+      type="text"
+      class="form-control"
+      id="udbetalingInput"
+      placeholder="Indtast udbetaling"
+    />
+  </div>
+
+  <div class="form-group mt-3">
+    <label for="loebetidInput">Løbetid Realkreditlån i år</label>
+    <input
+      formControlName="loebetid"
+      type="text"
+      class="form-control"
+      id="loebetidInput"
+      placeholder="Indtast løbetid for Realkreditlån"
+    />
+  </div>
+
+  <div class="form-group mt-3">
+    <label for="afdragsfrihedInput">Afdragsfrihed i år</label>
+    <input
+      formControlName="afdragsfrihed"
+      type="text"
+      class="form-control"
+      id="afdragsfrihedInput"
+      placeholder="Indtast afdragsfrihed"
+    />
+  </div>
+
+  <div class="form-group mt-3">
+    <label for="loebetidBankInput">Løbetid Banklån i år</label>
+    <input
+      formControlName="loebetidBank"
+      type="text"
+      class="form-control"
+      id="loebetidBankInput"
+      placeholder="Indtast løbetid for Banklån"
+    />
+  </div>
+
+  <button
+    class="btn btn-outline-dark mt-3"
+    [disabled]="form.invalid"
+    (click)="onBeregn()"
+  >
+    Beregn
+  </button>
+
+  <button
+    class="btn btn-outline-dark mt-3 mx-3"
+    [disabled]="(laanberegningFacade.Laanberegning$ | async) === null"
+    (click)="onRegistrer()"
+  >
+    Registrer
+  </button>
+</form>
