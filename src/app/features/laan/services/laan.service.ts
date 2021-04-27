@@ -10,7 +10,7 @@ export class LaanService {
   constructor(private httpClient: HttpClient) {}
 
   getLaan$(boligKey: string): Observable<LaanResponse> {
-    const url = `${environment.apiBaseUrl}/laanberegning/${boligKey}`;
+    const url = `${environment.apiBaseUrl}/laan/${boligKey}`;
 
     if (!environment.production) {
       return this.httpClient.get<LaanResponse>(
