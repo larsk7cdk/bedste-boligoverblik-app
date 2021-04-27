@@ -1,8 +1,10 @@
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TypedAction } from '@ngrx/store/src/models';
-import { Laanberegning } from './laanberegning.interfaces';
-import { LaanberegningRequest } from '../services/laanberegning.service.interfaces';
+import {
+  Laanberegning,
+  LaanberegningRegistrer,
+} from './laanberegning.interfaces';
 
 const enum LaanberegningActionTypes {
   LAANBEREGNING_LOAD = '[Laanberegning - Load laanberegning]',
@@ -14,7 +16,7 @@ export type LaanberegningDispatchableActions = TypedAction<LaanberegningActionTy
 
 export const loadLaanberegning = createAction(
   LaanberegningActionTypes.LAANBEREGNING_LOAD,
-  props<{ request: LaanberegningRequest }>()
+  props<{ request: LaanberegningRegistrer }>()
 );
 
 export const loadLaanberegningSuccess = createAction(

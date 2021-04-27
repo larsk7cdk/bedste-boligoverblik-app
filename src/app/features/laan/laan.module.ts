@@ -10,9 +10,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { LaanStateModule } from './+state/laan.state.module';
 import { LaanRegistrerComponent } from './containers/laan-registrer/laan-registrer.component';
+import { LaanDetaljerComponent } from './presentational/laan-detaljer/laan-detaljer.component';
 
 @NgModule({
-  declarations: [LaanOversigtComponent, LaanRegistrerComponent],
+  declarations: [LaanOversigtComponent, LaanRegistrerComponent, LaanDetaljerComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

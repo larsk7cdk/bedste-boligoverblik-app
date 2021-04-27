@@ -42,7 +42,7 @@ export class BoligEffects {
     this.actions$.pipe(
       ofType(fromActions.saveBolig),
       exhaustMap((action) => {
-        const request = this.boligMapperService.mapToBoligOpretRequest(
+        const request = this.boligMapperService.mapToBoligRegistrerRequest(
           action.request
         );
 

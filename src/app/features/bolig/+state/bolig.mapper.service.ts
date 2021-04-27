@@ -25,7 +25,7 @@ export class BoligMapperService {
     );
   }
 
-  public mapToBoligOpretRequest(
+  public mapToBoligRegistrerRequest(
     boligRegistrer: BoligRegistrer
   ): BoligRegistrerRequest {
     return {

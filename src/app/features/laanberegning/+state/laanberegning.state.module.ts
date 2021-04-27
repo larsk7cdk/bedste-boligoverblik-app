@@ -6,6 +6,7 @@ import { LaanberegningEffects } from './laanberegning.effects';
 import { LaanberegningFacade } from './laanberegning.facade';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { LaanberegningMapperService } from './laanberegning.mapper.service';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,6 @@ import { StoreModule } from '@ngrx/store';
     StoreModule.forFeature(LAANBEREGNING_FEATURE_NAME, fromReducer.reducer),
     EffectsModule.forFeature([LaanberegningEffects]),
   ],
-  providers: [LaanberegningFacade],
+  providers: [LaanberegningFacade, LaanberegningMapperService],
 })
 export class LaanberegningStateModule {}

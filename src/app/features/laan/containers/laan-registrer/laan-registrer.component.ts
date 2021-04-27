@@ -48,7 +48,7 @@ export class LaanRegistrerComponent implements OnInit {
 
   onBeregn(): void {
     if (this.form.valid) {
-      const request = this._createRequest();
+      const request = this._createLaanberegningRequest();
 
       console.log('request', request);
       this.laanberegningFacade.Dispatch(loadLaanberegning({ request }));
@@ -64,7 +64,7 @@ export class LaanRegistrerComponent implements OnInit {
 
     const request: LaanRegistrerRequest = {
       boligKey: 'lars',
-      request: JSON.stringify(this._createRequest()),
+      request: JSON.stringify(this._createLaanberegningRequest()),
       result,
     };
     this.laanFacade.Dispatch(saveLaan({ request }));
@@ -92,7 +92,7 @@ export class LaanRegistrerComponent implements OnInit {
     );
   }
 
-  _createRequest(): LaanberegningRequest {
+  _createLaanberegningRequest(): LaanberegningRequest {
     const request: LaanberegningRequest = {
       laanprodukt: this.form.get('laanprodukt').value,
       pris: this.form.get('pris').value,

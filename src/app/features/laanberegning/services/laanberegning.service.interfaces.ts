@@ -12,21 +12,13 @@ export interface LaanberegningResponse {
   banklaan: Banklaan;
 }
 
-export interface Realkreditlaan {
+export interface Realkreditlaan extends Basislaan {
   afdragsfrihedAar: number;
-  restgaeld: number;
-  loebetid: number;
-  mdlYdelseFoerSkat: number;
-  mdlYdelseEfterSkat: number;
-  mdlAfdrag: number;
-  tilbagebetaling: number;
-  aaopFoerSkatPct: number;
-  aaopEfterSkatPct: number;
-  debitorRentePct: number;
-  betalinger: Betalinger[];
 }
 
-export interface Banklaan {
+export interface Banklaan extends Basislaan {}
+
+export interface Basislaan {
   restgaeld: number;
   loebetid: number;
   mdlYdelseFoerSkat: number;
