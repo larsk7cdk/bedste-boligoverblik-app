@@ -2,12 +2,14 @@
   {
     "boligKey": "lars",
     "request": {
-      "laanprodukt": null,
-      "pris": "1",
-      "udbetaling": "1",
-      "loebetid": "1",
-      "afdragsfrihed": "",
-      "loebetidbank": ""
+      "laanberegning": {
+        "laanprodukt": null,
+        "pris": "1",
+        "udbetaling": "1",
+        "loebetid": "1",
+        "afdragsfrihed": "",
+        "loebetidbank": ""
+      }
     },
     "result": {
       "realkreditlaan": {
@@ -850,12 +852,14 @@
   {
     "boligKey": "lars",
     "request": {
-      "laanprodukt": null,
-      "pris": "1",
-      "udbetaling": "1",
-      "loebetid": "1",
-      "afdragsfrihed": "",
-      "loebetidbank": ""
+      "laanberegning": {
+        "laanprodukt": null,
+        "pris": "1",
+        "udbetaling": "1",
+        "loebetid": "1",
+        "afdragsfrihed": "",
+        "loebetidbank": ""
+      }
     },
     "result": {
       "realkreditlaan": {

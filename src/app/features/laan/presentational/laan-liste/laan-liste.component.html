@@ -1,0 +1,14 @@
+<h3>Lån i boligen</h3>
+
+{{laan[0].laanberegning | json}}
+
+<section class="row">
+  <div class="col-12">
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of laan" class="list-group-item">
+        Pris
+        <span>{{ item.laanberegning.pris | customNumber: 'kr.' }}</span>
+      </li>
+    </ul>
+  </div>
+</section>

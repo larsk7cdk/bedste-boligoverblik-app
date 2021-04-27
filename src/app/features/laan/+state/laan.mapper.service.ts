@@ -4,6 +4,7 @@ import {
   LaanRegistrerRequest,
   LaanResponse,
 } from '../services/laan.service.interfaces';
+import { LaanberegningRegistrer } from '../../laanberegning/+state/laanberegning.interfaces';
 
 @Injectable()
 export class LaanMapperService {
@@ -11,6 +12,7 @@ export class LaanMapperService {
     return laanResponse.map(
       (m): Laan => {
         return {
+          laanberegning: m.request["laanberegning"],
           realkreditlaan: m.result['realkreditlaan'],
           banklaan: m.result['banklaan'],
         };
@@ -19,10 +21,10 @@ export class LaanMapperService {
   }
 
   public mapToLaanRegistrerRequest(
-    LaanRegistrer: LaanRegistrer
+    laanRegistrer: LaanRegistrer
   ): LaanRegistrerRequest {
     return {
-      ...LaanRegistrer,
+      ...laanRegistrer,
     };
   }
 }

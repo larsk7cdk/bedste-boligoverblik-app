@@ -1,8 +1,7 @@
 <h3>Registrerede lån på boligen</h3>
 
-<p>Tabel med lån</p>
-
-<app-laan-detaljer [laan]="(laanFacade.Laan$ | async)[0]"></app-laan-detaljer>
+<app-laan-liste [laan]="(laanFacade.Laan$ | async)"></app-laan-liste>
+<!-- <app-laan-detaljer [laan]="(laanFacade.Laan$ | async)[0]"></app-laan-detaljer> -->
 
 <button class="btn btn-outline-dark my-3" [routerLink]="['/laan/registrer']">
   Nyt lån

@@ -1,9 +1,32 @@
-<p>laan-detaljer works!</p>
+<section class="row">
+  <div class="col-md-6 col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Realkreditlån</h5>
 
-<ng-container *ngIf="laan.realkreditlaan">
-  <h3>Realkreditlån</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Mdl. ydelse
+            <span
+              >{{ laan.realkreditlaan.mdlYdelseFoerSkat | customNumber: 'kr.'
+              }}</span
+            >
+          </li>
+          <li class="list-group-item">
+            Mdl. ydelse
+            <span
+              >{{ laan.realkreditlaan.mdlYdelseFoerSkat | customNumber: 'kr.'
+              }}</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  {{ laan.realkreditlaan.mdlYdelseFoerSkat }}
-</ng-container>
+  <div class="col-md-6 col-12">
+    <h5>Banklån</h5>
 
-
+    {{ laan.realkreditlaan.mdlYdelseFoerSkat }}
+  </div>
+</section>

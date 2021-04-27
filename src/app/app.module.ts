@@ -10,6 +10,10 @@ import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './+state/app.reducer';
+import { registerLocaleData } from '@angular/common';
+import localeDa from '@angular/common/locales/da';
+
+registerLocaleData(localeDa);
 
 @NgModule({
   declarations: [AppComponent],

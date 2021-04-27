@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { StateOfType } from 'src/shared/store/common';
-import { Banklaan, Realkreditlaan } from '../../laanberegning/+state/laanberegning.interfaces';
+import { Banklaan, LaanberegningRegistrer, Realkreditlaan } from '../../laanberegning/+state/laanberegning.interfaces';
 
 export type LaanState = StateOfType<{
   behaviours: {
@@ -11,6 +11,7 @@ export type LaanState = StateOfType<{
 }>;
 
 export interface Laan {
+  laanberegning: LaanberegningRegistrer;
   realkreditlaan: Realkreditlaan;
   banklaan: Banklaan;
 }
