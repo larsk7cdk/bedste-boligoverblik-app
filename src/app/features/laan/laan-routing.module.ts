@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { LaanOversigtComponent } from './containers/laan-oversigt/laan-oversigt.component';
 import { LaanRegistrerComponent } from './containers/laan-registrer/laan-registrer.component';
+import { LaanVisComponent } from './presentational/laan-vis/laan-vis.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'registrer',
     component: LaanRegistrerComponent,
+  },
+  {
+    path: 'vis',
+    component: LaanVisComponent,
   },
 ];
 

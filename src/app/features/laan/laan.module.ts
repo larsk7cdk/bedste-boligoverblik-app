@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { LaanberegningModule } from '../laanberegning/laanberegning.module';
 import { LaanberegningRoutingModule } from './laan-routing.module';
-import { LaanDetaljerComponent } from './presentational/laan-detaljer/laan-detaljer.component';
+import { LaanVisComponent } from './presentational/laan-vis/laan-vis.component';
 import { LaanListeComponent } from './presentational/laan-liste/laan-liste.component';
 import { LaanOversigtComponent } from './containers/laan-oversigt/laan-oversigt.component';
 import { LaanproduktModule } from '../laanprodukt/laanprodukt.module';
@@ -18,7 +18,7 @@ import { LaanStateModule } from './+state/laan.state.module';
     LaanOversigtComponent,
     LaanRegistrerComponent,
     LaanListeComponent,
-    LaanDetaljerComponent,
+    LaanVisComponent,
   ],
   imports: [
     CommonModule,

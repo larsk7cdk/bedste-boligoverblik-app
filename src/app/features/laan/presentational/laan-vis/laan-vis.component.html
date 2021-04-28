@@ -1,0 +1,57 @@
+<h1>
+  <i-bs
+    name="arrow-left-circle"
+    width="2rem"
+    height="2rem"
+    [routerLink]="['/boliger/vis']"
+  ></i-bs>
+  Lån
+</h1>
+
+<section class="row mt-3">
+  <div class="col-md-6 col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Realkreditlån</h5>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Mdl. ydelse
+            <span>{{
+              laan.realkreditlaan.mdlYdelseFoerSkat | customNumber: "kr."
+            }}</span>
+          </li>
+          <li class="list-group-item">
+            Mdl. ydelse
+            <span>{{
+              laan.realkreditlaan.mdlYdelseFoerSkat | customNumber: "kr."
+            }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Banklån</h5>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Mdl. ydelse
+            <span>{{
+              laan.banklaan.mdlYdelseFoerSkat | customNumber: "kr."
+            }}</span>
+          </li>
+          <li class="list-group-item">
+            Mdl. ydelse
+            <span>{{
+              laan.banklaan.mdlYdelseFoerSkat | customNumber: "kr."
+            }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

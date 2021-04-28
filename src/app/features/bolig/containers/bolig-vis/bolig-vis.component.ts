@@ -12,7 +12,7 @@ import { Bolig } from '../../+state/bolig.interfaces';
 export class BoligVisComponent implements OnInit {
   bolig$: Observable<Bolig>;
 
-  constructor(private router: Router, public boligFacade: BoligFacade) {
+  constructor(public boligFacade: BoligFacade) {
     // this.bolig = this.router.getCurrentNavigation().extras.state as Bolig;
   }
 
