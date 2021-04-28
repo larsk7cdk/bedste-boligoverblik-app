@@ -4,9 +4,9 @@ import { TypedAction } from '@ngrx/store/src/models';
 import { Laanprodukt } from './laanprodukt.interfaces';
 
 const enum LaanproduktActionTypes {
-  LAANPRODUKT_LOAD = '[Laanberegning - Load laanprodukter]',
-  LAANPRODUKT_LOAD_SUCCESS = '[Laanberegning - Load laanprodukter Success]',
-  LAANPRODUKT_LOAD_FAILED = '[Laanberegning - Load laanprodukter Failure]',
+  LAANPRODUKT_LOAD = '[laanprodukt - Load laanprodukter]',
+  LAANPRODUKT_LOAD_SUCCESS = '[laanprodukt - Load laanprodukter Success]',
+  LAANPRODUKT_LOAD_FAILED = '[laanprodukt - Load laanprodukter Failure]',
 }
 
 export type LaanproduktDispatchableActions = TypedAction<LaanproduktActionTypes>;

@@ -18,11 +18,11 @@ export class LaanMapperService {
   public mapToLaan(laanResponse: LaanResponse): Laan[] {
     return laanResponse.map(
       (m): Laan => {
-        const laanberegning: LaanberegningRegistrer =
-          m.request['laanberegning'];
-        const realkreditlaan: Realkreditlaan = m.result['realkreditlaan'];
-        const banklaan: Banklaan = m.result['banklaan'];
-
+        const laanberegning: LaanberegningRegistrer = JSON.parse(m.request);
+        const realkreditlaan: Realkreditlaan = JSON.parse(m.result)[
+          'realkreditlaan'
+        ];
+        const banklaan: Banklaan = JSON.parse(m.result)['banklaan'];
         const laanprodukt = this.laanproduktFacade.Laanprodukt(
           laanberegning.laanprodukt
         ).value;
