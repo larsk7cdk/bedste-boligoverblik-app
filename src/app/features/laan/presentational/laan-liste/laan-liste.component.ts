@@ -1,8 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Laan } from '../../+state/laan.interfaces';
 
 @Component({
@@ -14,4 +10,6 @@ import { Laan } from '../../+state/laan.interfaces';
 export class LaanListeComponent {
   @Input()
   laan: Laan[];
+
+  onVisLaan(item:Laan): void {}
 }

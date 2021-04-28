@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { loadLaanprodukt } from 'src/app/features/laanprodukt/+state/laanprodukt.actions';
+import { LaanproduktFacade } from 'src/app/features/laanprodukt/+state/laanprodukt.facade';
 import { loadBolig, setSelectedBolig } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
 import { Bolig } from '../../+state/bolig.interfaces';
@@ -10,10 +12,11 @@ import { Bolig } from '../../+state/bolig.interfaces';
   styleUrls: ['./bolig-oversigt.component.scss'],
 })
 export class BoligOversigtComponent implements OnInit {
-  constructor(private router: Router, public boligFacade: BoligFacade) {}
+  constructor(private router: Router, public boligFacade: BoligFacade,    private laanproduktFacade: LaanproduktFacade) {}
 
   ngOnInit(): void {
     this.boligFacade.Dispatch(loadBolig({ userKey: 'lars' }));
+    this.laanproduktFacade.Dispatch(loadLaanprodukt());
   }
 
   onVisBolig($event: Bolig): void {

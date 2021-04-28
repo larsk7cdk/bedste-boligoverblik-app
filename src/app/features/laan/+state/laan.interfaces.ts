@@ -11,6 +11,9 @@ export type LaanState = StateOfType<{
 }>;
 
 export interface Laan {
+  laanprodukt: string;
+  samletMaanedligYdelseFoerSkat: number;
+  
   laanberegning: LaanberegningRegistrer;
   realkreditlaan: Realkreditlaan;
   banklaan: Banklaan;

@@ -1,3 +1,7 @@
-.list-group > li > span {
-  float: right;
+table {
+  table-layout: fixed;
+}
+
+tr {
+  vertical-align: middle;
 }

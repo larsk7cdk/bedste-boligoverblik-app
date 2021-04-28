@@ -1,14 +1,39 @@
-<h3>Lån i boligen</h3>
+<h3>Lån</h3>
 
-{{laan[0].laanberegning | json}}
-
-<section class="row">
-  <div class="col-12">
-    <ul class="list-group list-group-flush">
-      <li *ngFor="let item of laan" class="list-group-item">
-        Pris
-        <span>{{ item.laanberegning.pris | customNumber: 'kr.' }}</span>
-      </li>
-    </ul>
-  </div>
-</section>
+<div class="table-responsive mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="h6">Pris</th>
+        <th class="h6">Lånprodukt</th>
+        <th class="h6 text-end">Mdl. ydelse før skat</th>
+        <th class="h6 text-end">Løbetid</th>
+        <th class="h6 text-end">Afdragsfrihed</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of laan">
+        <td>{{ item.laanberegning.pris | customNumber: "kr." }}</td>
+        <td>{{ item.laanprodukt }}</td>
+        <td class="text-end">
+          {{ item.samletMaanedligYdelseFoerSkat | customNumber: "kr." }}
+        </td>
+        <td class="text-end">
+          {{ item.realkreditlaan.loebetid | customNumber: "år" }}
+        </td>
+        <td class="text-end">
+          {{ item.realkreditlaan.afdragsfrihedAar | customNumber: "år" }}
+        </td>
+        <td class="text-end">
+          <button
+            class="btn btn-outline-dark td--button"
+            (click)="onVisLaan(item)"
+          >
+            Vis lån
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

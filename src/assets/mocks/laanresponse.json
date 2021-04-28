@@ -3,10 +3,10 @@
     "boligKey": "lars",
     "request": {
       "laanberegning": {
-        "laanprodukt": null,
-        "pris": "1",
-        "udbetaling": "1",
-        "loebetid": "1",
+        "laanprodukt": "REAL_KREDIT_FAST_RENTE",
+        "pris": "3500000",
+        "udbetaling": "250000",
+        "loebetid": "30",
         "afdragsfrihed": "",
         "loebetidbank": ""
       }
@@ -853,7 +853,7 @@
     "boligKey": "lars",
     "request": {
       "laanberegning": {
-        "laanprodukt": null,
+        "laanprodukt": "REAL_KREDIT_FAST_RENTE",
         "pris": "1",
         "udbetaling": "1",
         "loebetid": "1",

@@ -13,7 +13,6 @@ import { loadLaanberegning } from 'src/app/features/laanberegning/+state/laanber
 import { LaanberegningFacade } from 'src/app/features/laanberegning/+state/laanberegning.facade';
 import { Laanberegning } from 'src/app/features/laanberegning/+state/laanberegning.interfaces';
 import { LaanberegningRequest } from 'src/app/features/laanberegning/services/laanberegning.service.interfaces';
-import { loadLaanprodukt } from 'src/app/features/laanprodukt/+state/laanprodukt.actions';
 import { LaanproduktFacade } from 'src/app/features/laanprodukt/+state/laanprodukt.facade';
 import { saveLaan } from '../../+state/laan.actions';
 import { LaanFacade } from '../../+state/laan.facade';
@@ -40,8 +39,6 @@ export class LaanRegistrerComponent implements OnInit {
 
   ngOnInit(): void {
     this.result$ = this.laanberegningFacade.Laanberegning$;
-
-    this.laanproduktFacade.Dispatch(loadLaanprodukt());
 
     this._configureForm();
   }
