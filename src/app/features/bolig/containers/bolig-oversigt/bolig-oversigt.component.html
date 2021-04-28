@@ -1,10 +1,22 @@
 <h1>Boliger</h1>
 
-<div class="text-center" *ngIf="(boligFacade.BoligIsLoading$ | async)">
+<div
+  class="text-center"
+  *ngIf="
+    (boligFacade.BoligIsLoading$ | async) ||
+    (laanproduktFacade.LaanproduktIsLoading$ | async)
+  "
+>
   <app-spinner></app-spinner>
 </div>
 
-<div class="table-responsive mt-3" *ngIf="boligFacade.BoligIsLoaded$ | async">
+<div
+  class="table-responsive mt-3"
+  *ngIf="
+    (boligFacade.BoligIsLoaded$ | async) &&
+    (laanproduktFacade.LaanproduktIsLoaded$ | async)
+  "
+>
   <table class="table table-striped">
     <thead>
       <tr>

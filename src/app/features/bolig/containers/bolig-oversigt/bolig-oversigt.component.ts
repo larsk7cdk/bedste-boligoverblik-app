@@ -12,7 +12,11 @@ import { Bolig } from '../../+state/bolig.interfaces';
   styleUrls: ['./bolig-oversigt.component.scss'],
 })
 export class BoligOversigtComponent implements OnInit {
-  constructor(private router: Router, public boligFacade: BoligFacade,    private laanproduktFacade: LaanproduktFacade) {}
+  constructor(
+    private router: Router,
+    public boligFacade: BoligFacade,
+    public laanproduktFacade: LaanproduktFacade
+  ) {}
 
   ngOnInit(): void {
     this.boligFacade.Dispatch(loadBolig({ userKey: 'lars' }));
@@ -22,6 +26,5 @@ export class BoligOversigtComponent implements OnInit {
   onVisBolig($event: Bolig): void {
     this.boligFacade.Dispatch(setSelectedBolig({ bolig: $event }));
     this.router.navigate(['boliger/vis']);
-    // this.router.navigate(['boliger/vis'], { state: $event });
   }
 }
