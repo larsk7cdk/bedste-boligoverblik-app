@@ -9,33 +9,24 @@ import {
   LaanberegningRegistrer,
   Realkreditlaan,
 } from '../../laanberegning/+state/laanberegning.interfaces';
-import { LaanproduktFacade } from '../../laanprodukt/+state/laanprodukt.facade';
 
 @Injectable()
 export class LaanMapperService {
-  constructor(private laanproduktFacade: LaanproduktFacade) {}
-
   public mapToLaan(laanResponse: LaanResponse): Laan[] {
     return laanResponse.map(
       (m): Laan => {
+        const laanproduktNavn = JSON.parse(m.result)['laanproduktNavn'];
         const laanberegning: LaanberegningRegistrer = JSON.parse(m.request);
-        const realkreditlaan: Realkreditlaan = JSON.parse(m.result)[
-          'realkreditlaan'
-        ];
+        const realkreditlaan: Realkreditlaan = JSON.parse(m.result)['realkreditlaan'];
         const banklaan: Banklaan = JSON.parse(m.result)['banklaan'];
-        const laanprodukt = this.laanproduktFacade.Laanprodukt(
-          laanberegning.laanprodukt
-        ).value;
-
-        const samletMaanedligYdelseFoerSkat =
-          realkreditlaan.mdlYdelseFoerSkat + banklaan.mdlYdelseFoerSkat;
+        const summeringLaan: Banklaan = JSON.parse(m.result)['summeringLaan'];
 
         return {
-          laanprodukt,
-          samletMaanedligYdelseFoerSkat,
-          laanberegning: laanberegning,
-          realkreditlaan: realkreditlaan,
-          banklaan: banklaan,
+          laanproduktNavn,
+          laanberegning,
+          realkreditlaan,
+          banklaan,
+          summeringLaan
         };
       }
     );

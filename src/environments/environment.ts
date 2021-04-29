@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiBaseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net/api'
-  // apiBaseUrl: 'https://localhost:5001/api'
+  production: true,
+  // apiBaseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net/api'
+  apiBaseUrl: 'https://localhost:5001/api'
 };
 
 /*

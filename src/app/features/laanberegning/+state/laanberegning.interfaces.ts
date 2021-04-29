@@ -18,8 +18,10 @@ export interface LaanberegningRegistrer {
 }
 
 export interface Laanberegning {
+  laanproduktNavn: string;
   realkreditlaan: Realkreditlaan;
   banklaan: Banklaan;
+  summeringLaan: SummeringLaan;
 }
 
 export interface Realkreditlaan extends Basislaan {
@@ -27,6 +29,14 @@ export interface Realkreditlaan extends Basislaan {
 }
 
 export interface Banklaan extends Basislaan {}
+
+export interface SummeringLaan {
+  restgaeld: number;
+  mdlYdelseFoerSkat: number;
+  mdlYdelseEfterSkat: number;
+  mdlAfdrag: number;
+  tilbagebetaling: number;
+}
 
 export interface Basislaan {
   restgaeld: number;

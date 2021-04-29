@@ -13,5 +13,7 @@ export class LaanVisComponent {
 
   constructor(private router: Router) {
     this.laan = this.router.getCurrentNavigation().extras.state as Laan;
+
+    console.log('laan', this.laan);
   }
 }
