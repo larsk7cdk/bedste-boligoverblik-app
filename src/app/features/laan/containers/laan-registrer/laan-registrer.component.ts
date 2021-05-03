@@ -1,11 +1,5 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { first, skipWhile } from 'rxjs/operators';
@@ -14,6 +8,7 @@ import { LaanberegningFacade } from 'src/app/features/laanberegning/+state/laanb
 import { Laanberegning } from 'src/app/features/laanberegning/+state/laanberegning.interfaces';
 import { LaanberegningRequest } from 'src/app/features/laanberegning/services/laanberegning.service.interfaces';
 import { LaanproduktFacade } from 'src/app/features/laanprodukt/+state/laanprodukt.facade';
+import { ValidatorService } from 'src/app/features/shared/validation/validator.service';
 import { saveLaan } from '../../+state/laan.actions';
 import { LaanFacade } from '../../+state/laan.facade';
 import { LaanRegistrerRequest } from '../../services/laan.service.interfaces';
@@ -29,9 +24,72 @@ export class LaanRegistrerComponent implements OnInit {
 
   result$: Observable<Laanberegning>;
 
+  /* Validation expressions */
+  private readonly PRIS_REGEX = '^[0-9]$';
+
+  get laanproduktValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('laanprodukt'),
+      {
+        required: 'Du mangler at udfylde lånprodukt',
+      }
+    );
+  }
+
+  get prisValidationMessage(): string {
+    return this.validatorService.getValidationMessage(this.form.get('pris'), {
+      required: 'Du mangler at udfylde pris',
+      min: 'Pris skal være større end 0',
+      max: 'Pris skal være lig med eller mindre end 10000000',
+    });
+  }
+
+  get udbetalingValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('udbetaling'),
+      {
+        required: 'Du mangler at udfylde udbetaling',
+        min: 'Udbetaling skal være større end 0',
+        max: 'Udbetaling skal være lig med eller mindre end 10000000',
+      }
+    );
+  }
+
+  get loebetidValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('loebetid'),
+      {
+        required: 'Du mangler at udfylde loebetid',
+        min: 'Loebetid skal være større end 0',
+        max: 'Loebetid skal være lig med eller mindre end 30',
+      }
+    );
+  }
+
+  get afdragsfrihedValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('afdragsfrihed'),
+      {
+        min: 'Afdragsfrihed skal være lig med eller større end 0',
+        max: 'Afdragsfrihed skal være mindre end 10',
+      }
+    );
+  }
+
+  get loebetidBankValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('loebetidBank'),
+      {
+        min: 'Loebetid skal være lig med eller større end 0',
+        max: 'Loebetid skal være lig med eller mindre end 20',
+      }
+    );
+  }
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private validatorService: ValidatorService,
     public laanproduktFacade: LaanproduktFacade,
     public laanberegningFacade: LaanberegningFacade,
     public laanFacade: LaanFacade
@@ -70,15 +128,18 @@ export class LaanRegistrerComponent implements OnInit {
   _configureForm(): void {
     this.form = new FormGroup(
       this.fb.group({
-        laanprodukt: [],
+        laanprodukt: [Validators.required],
         pris: [
           '',
-          [Validators.required, Validators.min(0), Validators.max(10000000)],
+          [Validators.required, Validators.min(1), Validators.max(10000000)],
         ],
-        udbetaling: ['', [Validators.required, Validators.min(0)]],
+        udbetaling: [
+          '',
+          [Validators.required, Validators.min(1), , Validators.max(10000000)],
+        ],
         loebetid: [
           '',
-          [Validators.required, Validators.min(0), Validators.max(30)],
+          [Validators.required, Validators.min(1), Validators.max(30)],
         ],
         afdragsfrihed: ['', [Validators.min(0), Validators.max(30)]],
         loebetidBank: ['', [Validators.min(0), Validators.max(20)]],
@@ -95,8 +156,14 @@ export class LaanRegistrerComponent implements OnInit {
       pris: this.form.get('pris').value,
       udbetaling: this.form.get('udbetaling').value,
       loebetid: this.form.get('loebetid').value,
-      afdragsfrihed: this.form.get('afdragsfrihed').value,
-      loebetidbank: this.form.get('loebetidBank').value,
+      afdragsfrihed:
+        this.form.get('afdragsfrihed').value === ''
+          ? 0
+          : this.form.get('afdragsfrihed').value,
+      loebetidbank:
+        this.form.get('loebetidBank').value === ''
+          ? 0
+          : this.form.get('loebetidBank').value,
     };
 
     return request;

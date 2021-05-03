@@ -22,6 +22,10 @@
         >{{item.value}}</option
       >
     </select>
+
+    <p class="text-danger" *ngIf="laanproduktValidationMessage">
+      {{ laanproduktValidationMessage }}
+    </p>
   </div>
 
   <div class="form-group mt-3">
@@ -33,6 +37,10 @@
       id="prisInput"
       placeholder="Indtast pris"
     />
+
+    <p class="text-danger" *ngIf="prisValidationMessage">
+      {{ prisValidationMessage }}
+    </p>
   </div>
 
   <div class="form-group mt-3">
@@ -44,6 +52,10 @@
       id="udbetalingInput"
       placeholder="Indtast udbetaling"
     />
+
+    <p class="text-danger" *ngIf="udbetalingValidationMessage">
+      {{ udbetalingValidationMessage }}
+    </p>
   </div>
 
   <div class="form-group mt-3">
@@ -55,6 +67,10 @@
       id="loebetidInput"
       placeholder="Indtast løbetid for Realkreditlån"
     />
+
+    <p class="text-danger" *ngIf="loebetidValidationMessage">
+      {{ loebetidValidationMessage }}
+    </p>
   </div>
 
   <div class="form-group mt-3">
@@ -66,6 +82,10 @@
       id="afdragsfrihedInput"
       placeholder="Indtast afdragsfrihed"
     />
+
+    <p class="text-danger" *ngIf="afdragsfrihedValidationMessage">
+      {{ afdragsfrihedValidationMessage }}
+    </p>
   </div>
 
   <div class="form-group mt-3">
@@ -77,6 +97,10 @@
       id="loebetidBankInput"
       placeholder="Indtast løbetid for Banklån"
     />
+
+    <p class="text-danger" *ngIf="loebetidBankValidationMessage">
+      {{ loebetidBankValidationMessage }}
+    </p>
   </div>
 
   <button
@@ -95,4 +119,3 @@
     Registrer
   </button>
 </form>
-

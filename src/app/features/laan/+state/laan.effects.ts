@@ -7,6 +7,7 @@ import { LaanMapperService } from './laan.mapper.service';
 import { LaanResponse } from '../services/laan.service.interfaces';
 import { LaanService } from '../services/laan.service';
 import { of } from 'rxjs';
+
 @Injectable()
 export class LaanEffects {
   constructor(
@@ -18,22 +19,18 @@ export class LaanEffects {
   loadLaan$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromActions.loadLaan),
-      switchMap((action) =>
-        this.laanService.getLaan$(action.boligKey).pipe(
+      switchMap((action) => {
+        return this.laanService.getLaan$(action.boligKey).pipe(
           map((response: LaanResponse) =>
             fromActions.loadLaanSuccess({
               laan: this.laanMapperService.mapToLaan(response),
             })
+          ),
+          catchError((error: HttpErrorResponse) =>
+            of(fromActions.loadLaanFailed({ error }))
           )
-        )
-      ),
-      catchError((error: HttpErrorResponse) =>
-        of(
-          fromActions.loadLaanFailed({
-            error,
-          })
-        )
-      )
+        );
+      })
     )
   );
 
@@ -45,17 +42,17 @@ export class LaanEffects {
           action.request
         );
 
-        return this.laanService
-          .saveLaan$(request)
-          .pipe(map(() => fromActions.saveLaanSuccess()));
-      }),
-      catchError((error: HttpErrorResponse) =>
-        of(
-          fromActions.saveLaanFailed({
-            error,
-          })
-        )
-      )
+        return this.laanService.saveLaan$(request).pipe(
+          map(() => fromActions.saveLaanSuccess()),
+          catchError((error: HttpErrorResponse) =>
+            of(
+              fromActions.saveLaanFailed({
+                error,
+              })
+            )
+          )
+        );
+      })
     )
   );
 }
