@@ -24,9 +24,6 @@ export class LaanRegistrerComponent implements OnInit {
 
   result$: Observable<Laanberegning>;
 
-  /* Validation expressions */
-  private readonly PRIS_REGEX = '^[0-9]$';
-
   get laanproduktValidationMessage(): string {
     return this.validatorService.getValidationMessage(
       this.form.get('laanprodukt'),

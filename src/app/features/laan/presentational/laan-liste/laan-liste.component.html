@@ -14,16 +14,18 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of laan">
-        <td>{{ item.laanberegning.pris | customNumber: "kr." }}</td>
-        <td>{{ item.laanproduktNavn }}</td>
+        <td>{{ item.laanberegningRegistrer.pris | customNumber: "kr." }}</td>
+        <td>{{ item.laanberegning.laanproduktNavn }}</td>
         <td class="text-end">
-          {{ item.summeringLaan.mdlYdelseFoerSkat | customNumber: "kr." }}
+          {{ item.laanberegning.summeringLaan.mdlYdelseFoerSkat | customNumber:
+          "kr." }}
         </td>
         <td class="text-end">
-          {{ item.realkreditlaan.loebetid | customNumber: "år" }}
+          {{ item.laanberegning.realkreditlaan.loebetid | customNumber: "år" }}
         </td>
         <td class="text-end">
-          {{ item.realkreditlaan.afdragsfrihedAar | customNumber: "år" }}
+          {{ item.laanberegning.realkreditlaan.afdragsfrihedAar | customNumber:
+          "år" }}
         </td>
         <td class="text-end">
           <button
