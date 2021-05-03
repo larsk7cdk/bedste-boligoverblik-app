@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
 import * as fromActions from './bolig.actions';
-import { HttpErrorResponse } from '@angular/common/http';
-import { BoligService } from '../services/bolig.service';
-import { BoligResponse } from '../services/bolig.service.interfaces';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { BoligMapperService } from './bolig.mapper.service';
+import { BoligResponse } from '../services/bolig.service.interfaces';
+import { BoligService } from '../services/bolig.service';
+import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable()
 export class BoligEffects {
@@ -46,17 +46,17 @@ export class BoligEffects {
           action.request
         );
 
-        return this.boligService
-          .saveBolig$(request)
-          .pipe(map(() => fromActions.saveBoligSuccess()));
-      }),
-      catchError((error: HttpErrorResponse) =>
-        of(
-          fromActions.saveBoligFailed({
-            error,
-          })
-        )
-      )
+        return this.boligService.saveBolig$(request).pipe(
+          map(() => fromActions.saveBoligSuccess()),
+          catchError((error: HttpErrorResponse) =>
+            of(
+              fromActions.saveBoligFailed({
+                error,
+              })
+            )
+          )
+        );
+      })
     )
   );
 }

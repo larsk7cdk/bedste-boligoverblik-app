@@ -4,6 +4,7 @@ import { StateOfType } from 'src/shared/store/common';
 export type BoligState = StateOfType<{
   behaviours: {
     saving: boolean;
+    saved: boolean;
     error: HttpErrorResponse | null;
   };
   boligSelected: Bolig;

@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription, zip } from 'rxjs';
-import { delay } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { saveBolig } from '../../+state/bolig.actions';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { ValidatorService } from 'src/app/features/shared/validation/validator.service';
+import { saveBolig, saveBoligInit } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
 import { BoligRegistrer } from '../../+state/bolig.interfaces';
-import { ValidatorService } from 'src/app/features/shared/validation/validator.service';
 
 @Component({
   selector: 'app-bolig-reigstrer',
@@ -52,19 +52,7 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.subscriptions.push(
-      zip(
-        this.boligFacade.BoligIsSaved$,
-        this.boligFacade.BoligHasError$
-      ).subscribe((s) => {
-        // No errors
-        if (s[0] && !s[1]) {
-          delay(1000);
-          this.router.navigate(['/boliger']);
-        }
-      })
-    );
-
+    this.boligFacade.Dispatch(saveBoligInit());
     this._configureForm();
   }
 
@@ -73,6 +61,8 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
   }
 
   onRegistrer(): void {
+    this._addSubscribe();
+
     const request: BoligRegistrer = {
       vejnavn: this.form.get('vejnavn').value,
       husnummer: this.form.get('husnummer').value,
@@ -93,5 +83,17 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
         updateOn: 'blur',
       }
     );
+  }
+
+  _addSubscribe(): void {
+    if (this.subscriptions.length === 0) {
+      this.subscriptions.push(
+        this.boligFacade.BoligIsSaved$.subscribe((s) => {
+          if (s) {
+            this.router.navigate(['/boliger']);
+          }
+        })
+      );
+    }
   }
 }

@@ -10,6 +10,7 @@ const enum BoligActionTypes {
   BOLIG_LOAD_SUCCESS = '[Bolig - Load bolig Success]',
   BOLIG_LOAD_FAILED = '[Bolig - Load bolig Failure]',
 
+  BOLIG_SAVE_INIT = '[Bolig - Save bolig initialization]',
   BOLIG_SAVE = '[Bolig - Save bolig]',
   BOLIG_SAVE_SUCCESS = '[Bolig - Save bolig Success]',
   BOLIG_SAVE_FAILED = '[Bolig - Save bolig Failure]',
@@ -36,6 +37,8 @@ export const loadBoligFailed = createAction(
   BoligActionTypes.BOLIG_LOAD_FAILED,
   props<{ error: HttpErrorResponse }>()
 );
+
+export const saveBoligInit = createAction(BoligActionTypes.BOLIG_SAVE_INIT);
 
 export const saveBolig = createAction(
   BoligActionTypes.BOLIG_SAVE,

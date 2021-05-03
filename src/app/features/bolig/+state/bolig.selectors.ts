@@ -24,7 +24,8 @@ export const selectBoligIsSaving = createSelector(
 
 export const selectBoligIsSaved = createSelector(
   selectBoligState,
-  (state: fromInterfaces.BoligState) => state.behaviours.saving
+  (state: fromInterfaces.BoligState) =>
+    state.behaviours.error === null && state.behaviours.saved === true
 );
 
 export const selectBoligHasError = createSelector(
@@ -34,7 +35,8 @@ export const selectBoligHasError = createSelector(
 
 export const selectBoligSelected = createSelector(
   selectBoligState,
-  (state: fromInterfaces.BoligState): fromInterfaces.Bolig => state.boligSelected
+  (state: fromInterfaces.BoligState): fromInterfaces.Bolig =>
+    state.boligSelected
 );
 
 export const selectBoliger = createSelector(

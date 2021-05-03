@@ -6,6 +6,7 @@ const initialState: BoligState = {
   behaviours: {
     loading: false,
     saving: false,
+    saved: false,
     error: null,
   },
   boligSelected: null,
@@ -28,8 +29,8 @@ export const reducer = createReducer(
       behaviours: {
         ...state.behaviours,
         loading: true,
+        error: null,
       },
-      error: null,
     };
   }),
 
@@ -56,12 +57,25 @@ export const reducer = createReducer(
     };
   }),
 
+  on(fromActions.saveBoligInit, (state) => {
+    return {
+      ...state,
+      behaviours: {
+        ...state.behaviours,
+        saving: false,
+        saved: false,
+        error: null,
+      },
+    };
+  }),
+
   on(fromActions.saveBolig, (state) => {
     return {
       ...state,
       behaviours: {
         ...state.behaviours,
         saving: true,
+        saved: false,
         error: null,
       },
     };
@@ -73,6 +87,7 @@ export const reducer = createReducer(
       behaviours: {
         ...state.behaviours,
         saving: false,
+        saved: true,
       },
     };
   }),
