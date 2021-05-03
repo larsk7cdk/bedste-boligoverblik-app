@@ -35,7 +35,6 @@ export const reducer = createReducer(
   }),
 
   on(fromActions.loadLaanproduktFailed, (state, { error }) => {
-    debugger;
     return {
       ...state,
       behaviours: {
