@@ -1,16 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { delay, skipWhile } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Subscription, zip } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { saveBolig } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
 import { BoligRegistrer } from '../../+state/bolig.interfaces';
+import { ValidatorService } from 'src/app/features/shared/validation/validator.service';
 
 @Component({
   selector: 'app-bolig-reigstrer',
@@ -21,38 +17,51 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
   form: FormGroup = new FormGroup({});
   subscriptions: Subscription[] = [];
 
-  /* getters */
-  get vejnavn(): AbstractControl {
-    return this.form.get('vejnavn');
+  get vejnavnValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('vejnavn'),
+      {
+        required: 'Du mangler at udfylde vejnavn',
+      }
+    );
   }
 
-  get husnummer(): AbstractControl {
-    return this.form.get('husnummer');
+  get husnummerValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('husnummer'),
+      {
+        required: 'Du mangler at udfylde husnummer',
+      }
+    );
   }
 
-  get postnummer(): AbstractControl {
-    return this.form.get('postnummer');
+  get postnummerValidationMessage(): string {
+    return this.validatorService.getValidationMessage(
+      this.form.get('postnummer'),
+      {
+        required: 'Du mangler at udfylde postnummer',
+      }
+    );
   }
-
-  // get carDetailsFillOutValidationMessage(): string {
-  //   return this.validatorService.getValidationMessage(this.carDetailsFillOut, {
-  //     required: 'Du mangler at udfylde bilinformation',
-  //   });
-  // }
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private validatorService: ValidatorService,
     public boligFacade: BoligFacade
   ) {}
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.boligFacade.BoligIsSaved$.pipe(
-        skipWhile((s) => s === false),
-        delay(500)
-      ).subscribe(() => {
-        this.router.navigate(['/boliger']);
+      zip(
+        this.boligFacade.BoligIsSaved$,
+        this.boligFacade.BoligHasError$
+      ).subscribe((s) => {
+        // No errors
+        if (s[0] && !s[1]) {
+          delay(1000);
+          this.router.navigate(['/boliger']);
+        }
       })
     );
 
@@ -65,9 +74,9 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
 
   onRegistrer(): void {
     const request: BoligRegistrer = {
-      vejnavn: this.vejnavn.value,
-      husnummer: this.husnummer.value,
-      postnummer: this.postnummer.value,
+      vejnavn: this.form.get('vejnavn').value,
+      husnummer: this.form.get('husnummer').value,
+      postnummer: this.form.get('postnummer').value,
     };
 
     this.boligFacade.Dispatch(saveBolig({ request }));

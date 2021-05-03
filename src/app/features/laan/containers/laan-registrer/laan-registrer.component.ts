@@ -47,7 +47,6 @@ export class LaanRegistrerComponent implements OnInit {
     if (this.form.valid) {
       const request = this._createLaanberegningRequest();
 
-      console.log('request', request);
       this.laanberegningFacade.Dispatch(loadLaanberegning({ request }));
     }
   }
@@ -64,6 +63,7 @@ export class LaanRegistrerComponent implements OnInit {
       request: JSON.stringify(this._createLaanberegningRequest()),
       result,
     };
+
     this.laanFacade.Dispatch(saveLaan({ request }));
   }
 

@@ -29,6 +29,7 @@ export const reducer = createReducer(
         ...state.behaviours,
         loading: true,
       },
+      error: null,
     };
   }),
 
@@ -61,6 +62,7 @@ export const reducer = createReducer(
       behaviours: {
         ...state.behaviours,
         saving: true,
+        error: null,
       },
     };
   }),
