@@ -18,7 +18,7 @@ import { LaanRegistrerRequest } from '../../services/laan.service.interfaces';
   templateUrl: './laan-registrer.component.html',
   styleUrls: ['./laan-registrer.component.scss'],
 })
-export class LaanRegistrerComponent implements OnInit {
+export class LaanRegistrerComponent implements OnInit, OnDestroy {
   form: FormGroup = new FormGroup({});
   subscriptions: Subscription[] = [];
 
@@ -98,6 +98,10 @@ export class LaanRegistrerComponent implements OnInit {
     this._configureForm();
   }
 
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((s) => s.unsubscribe());
+  }
+
   onBeregn(): void {
     if (this.form.valid) {
       const request = this._createLaanberegningRequest();
@@ -118,6 +122,8 @@ export class LaanRegistrerComponent implements OnInit {
       request: JSON.stringify(this._createLaanberegningRequest()),
       result,
     };
+
+    this._addSubscribe();
 
     this.laanFacade.Dispatch(saveLaan({ request }));
   }
@@ -164,5 +170,19 @@ export class LaanRegistrerComponent implements OnInit {
     };
 
     return request;
+  }
+
+  _addSubscribe(): void {
+    if (this.subscriptions.length === 0) {
+      this.subscriptions.push(
+        this.laanFacade.LaanIsSaved$.subscribe((s) => {
+          if (s) {
+            setTimeout(() => {
+              this.router.navigate(['/boliger/vis']);
+            }, 500);
+          }
+        })
+      );
+    }
   }
 }

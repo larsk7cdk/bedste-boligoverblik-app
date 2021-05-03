@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { delay } from 'rxjs/operators';
 import { ValidatorService } from 'src/app/features/shared/validation/validator.service';
 import { saveBolig, saveBoligInit } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
@@ -89,9 +88,9 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
     if (this.subscriptions.length === 0) {
       this.subscriptions.push(
         this.boligFacade.BoligIsSaved$.subscribe((s) => {
-          if (s) {
+          setTimeout(() => {
             this.router.navigate(['/boliger']);
-          }
+          }, 500);
         })
       );
     }

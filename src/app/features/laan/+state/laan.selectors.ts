@@ -8,8 +8,7 @@ export const selectLaanState = createFeatureSelector<fromInterfaces.LaanState>(
 
 export const selectLaanIsLoading = createSelector(
   selectLaanState,
-  (state: fromInterfaces.LaanState) =>
-    state.behaviours.loading === true
+  (state: fromInterfaces.LaanState) => state.behaviours.loading === true
 );
 
 export const selectLaanIsLoaded = createSelector(
@@ -25,7 +24,8 @@ export const selectLaanIsSaving = createSelector(
 
 export const selectLaanIsSaved = createSelector(
   selectLaanState,
-  (state: fromInterfaces.LaanState) => state.behaviours.saving
+  (state: fromInterfaces.LaanState) =>
+    state.behaviours.error === null && state.behaviours.saved === true
 );
 
 export const selectLaanHasError = createSelector(
@@ -35,6 +35,5 @@ export const selectLaanHasError = createSelector(
 
 export const selectLaan = createSelector(
   selectLaanState,
-  (state: fromInterfaces.LaanState): fromInterfaces.Laan[] =>
-    state.laan
+  (state: fromInterfaces.LaanState): fromInterfaces.Laan[] => state.laan
 );

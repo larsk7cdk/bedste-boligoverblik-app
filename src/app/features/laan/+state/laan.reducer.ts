@@ -6,6 +6,7 @@ const initialState: LaanState = {
   behaviours: {
     loading: false,
     saving: false,
+    saved: false,
     error: null,
   },
   laan: [],
@@ -53,6 +54,8 @@ export const reducer = createReducer(
       behaviours: {
         ...state.behaviours,
         saving: true,
+        saved: false,
+        error: null,
       },
     };
   }),
@@ -63,6 +66,7 @@ export const reducer = createReducer(
       behaviours: {
         ...state.behaviours,
         saving: false,
+        saved: true,
       },
     };
   }),
