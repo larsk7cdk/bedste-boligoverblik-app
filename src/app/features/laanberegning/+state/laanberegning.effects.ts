@@ -32,16 +32,16 @@ export class LaanberegningEffects {
                   response
                 ),
               })
+            ),
+            catchError((error: HttpErrorResponse) =>
+              of(
+                fromActions.loadLaanberegningFailed({
+                  error,
+                })
+              )
             )
           );
-      }),
-      catchError((error: HttpErrorResponse) =>
-        of(
-          fromActions.loadLaanberegningFailed({
-            error,
-          })
-        )
-      )
+      })
     )
   );
 }

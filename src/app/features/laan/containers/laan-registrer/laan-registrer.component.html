@@ -121,3 +121,23 @@
     Registrer
   </button>
 </form>
+
+<div class="text-center">
+  <app-spinner
+    *ngIf="(laanberegningFacade.LaanberegningIsLoading$ | async) "
+  ></app-spinner>
+</div>
+
+<div
+  class="mt-3 alert alert-danger"
+  role="alert"
+  *ngIf="(laanberegningFacade.LaanberegningHasError$ | async)"
+>
+  Det er desværre ikke muligt at lave lånberegninger. Prøv igen om lidt, eller
+  kontakt os!
+</div>
+
+<app-laanberegning-vis
+  [laanberegning]="(result$ | async)"
+  *ngIf="(laanberegningFacade.LaanberegningIsLoaded$ | async) &&  (result$ | async)"
+></app-laanberegning-vis>

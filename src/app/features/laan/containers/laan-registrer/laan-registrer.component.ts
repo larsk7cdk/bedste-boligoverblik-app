@@ -154,11 +154,11 @@ export class LaanRegistrerComponent implements OnInit {
       udbetaling: this.form.get('udbetaling').value,
       loebetid: this.form.get('loebetid').value,
       afdragsfrihed:
-        this.form.get('afdragsfrihed').value === ''
+        !!this.form.get('afdragsfrihed').value === false
           ? 0
           : this.form.get('afdragsfrihed').value,
       loebetidbank:
-        this.form.get('loebetidBank').value === ''
+        !!this.form.get('loebetidBank').value === false
           ? 0
           : this.form.get('loebetidBank').value,
     };

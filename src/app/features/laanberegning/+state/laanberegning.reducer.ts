@@ -19,6 +19,7 @@ export const reducer = createReducer(
       behaviours: {
         ...state.behaviours,
         loading: true,
+        error: null,
       },
     };
   }),
