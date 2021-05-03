@@ -1,8 +1,17 @@
+:host {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
 main {
-  height: calc(100% - 128px);
-bottom: 128px;
+  flex: 1;
 }
 
 .auth {
   width: 100px;
+}
+
+footer {
+  position: relative;
 }
