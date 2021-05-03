@@ -17,14 +17,16 @@
           {{ laanberegning.realkreditlaan.loebetid | customNumber: "år" }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.loebetid | customNumber: "år" }}
+          {{ laanberegning?.banklaan === null ? '':
+          laanberegning?.banklaan?.loebetid | customNumber: "år" }}
         </td>
         <td></td>
       </tr>
       <tr>
         <td>Afdragsfrihed</td>
         <td class="text-end">
-          {{ laanberegning.realkreditlaan.afdragsfrihedAar | customNumber: "år" }}
+          {{ laanberegning.realkreditlaan.afdragsfrihedAar | customNumber: "år"
+          }}
         </td>
         <td></td>
         <td></td>
@@ -36,7 +38,8 @@
           "kr." }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.mdlYdelseFoerSkat | customNumber: "kr." }}
+          {{ laanberegning?.banklaan === null ? '':
+          laanberegning?.banklaan?.mdlYdelseFoerSkat | customNumber: "kr." }}
         </td>
         <td class="text-end">
           {{ laanberegning.summeringLaan.mdlYdelseFoerSkat | customNumber: "kr."
@@ -50,7 +53,8 @@
           "kr." }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.mdlYdelseEfterSkat | customNumber: "kr."
+          {{ laanberegning?.banklaan === null ?
+          '':laanberegning?.banklaan?.mdlYdelseEfterSkat | customNumber: "kr."
           }}
         </td>
         <td class="text-end">
@@ -64,7 +68,8 @@
           {{ laanberegning.realkreditlaan.mdlAfdrag | customNumber: "kr." }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.mdlAfdrag | customNumber: "kr." }}
+          {{ laanberegning?.banklaan === null ?
+          '':laanberegning?.banklaan?.mdlAfdrag | customNumber: "kr." }}
         </td>
         <td class="text-end">
           {{ laanberegning.summeringLaan.mdlAfdrag | customNumber: "kr." }}
@@ -77,7 +82,8 @@
           }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.tilbagebetaling | customNumber: "kr." }}
+          {{laanberegning?.banklaan === null ? '':
+          laanberegning?.banklaan?.tilbagebetaling | customNumber: "kr." }}
         </td>
         <td class="text-end">
           {{ laanberegning.summeringLaan.tilbagebetaling | customNumber: "kr."
@@ -90,7 +96,8 @@
           {{ laanberegning.realkreditlaan.restgaeld | customNumber: "kr." }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.restgaeld | customNumber: "kr." }}
+          {{laanberegning?.banklaan === null ? '':
+          laanberegning?.banklaan?.restgaeld | customNumber: "kr." }}
         </td>
         <td class="text-end">
           {{ laanberegning.summeringLaan.restgaeld | customNumber: "kr." }}
@@ -102,7 +109,8 @@
           {{ laanberegning.realkreditlaan.aaopFoerSkatPct | customNumber: "%" }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.aaopFoerSkatPct | customNumber: "%" }}
+          {{ laanberegning?.banklaan === null ?
+          '':laanberegning?.banklaan?.aaopFoerSkatPct | customNumber: "%" }}
         </td>
         <td></td>
       </tr>
@@ -113,7 +121,8 @@
           }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.aaopEfterSkatPct | customNumber: "%" }}
+          {{ laanberegning?.banklaan === null ?
+          '':laanberegning?.banklaan?.aaopEfterSkatPct | customNumber: "%" }}
         </td>
         <td></td>
       </tr>
@@ -123,7 +132,8 @@
           {{ laanberegning.realkreditlaan.debitorRentePct | customNumber: "%" }}
         </td>
         <td class="text-end">
-          {{ laanberegning?.banklaan?.debitorRentePct | customNumber: "%" }}
+          {{laanberegning?.banklaan === null ? '':
+          laanberegning?.banklaan?.debitorRentePct | customNumber: "%" }}
         </td>
         <td></td>
       </tr>

@@ -1,3 +1,4 @@
+import { BoligGuard } from 'src/app/features/shared/guards/bolig.guard';
 import { BoligOversigtComponent } from './containers/bolig-oversigt/bolig-oversigt.component';
 import { BoligRegistrerComponent } from './containers/bolig-registrer/bolig-registrer.component';
 import { BoligRoutingModule } from './bolig-routing.module';
@@ -21,12 +22,12 @@ import { BoligStateModule } from './+state/bolig.state.module';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SharedModule,
     BoligRoutingModule,
     BoligStateModule,
-    SharedModule,
     LaanModule,
   ],
   exports: [BoligOversigtComponent],
-  providers: [BoligService],
+  providers: [BoligService, BoligGuard],
 })
 export class BoligModule {}

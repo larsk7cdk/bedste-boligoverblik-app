@@ -3,11 +3,14 @@ import { BoligRegistrerComponent } from './containers/bolig-registrer/bolig-regi
 import { BoligVisComponent } from './containers/bolig-vis/bolig-vis.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BoligGuard } from '../shared/guards/bolig.guard';
+
 
 const routes: Routes = [
   {
     path: '',
     component: BoligOversigtComponent,
+    canActivate: [BoligGuard],
   },
   {
     path: 'registrer',
