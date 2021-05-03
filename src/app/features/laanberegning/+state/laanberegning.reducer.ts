@@ -21,6 +21,7 @@ export const reducer = createReducer(
         loading: true,
         error: null,
       },
+      laanberegning: null,
     };
   }),
 
@@ -43,7 +44,7 @@ export const reducer = createReducer(
         loading: false,
         error,
       },
-      boliger: [],
+      laanberegning: null,
     };
   })
 );
