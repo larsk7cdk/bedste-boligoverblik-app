@@ -40,7 +40,7 @@ export class LaanRegistrerComponent implements OnInit {
     return this.validatorService.getValidationMessage(this.form.get('pris'), {
       required: 'Du mangler at udfylde pris',
       min: 'Pris skal være større end 0',
-      max: 'Pris skal være lig med eller mindre end 10000000',
+      max: 'Pris skal være lig med eller mindre end 10.000.000',
     });
   }
 
@@ -50,7 +50,7 @@ export class LaanRegistrerComponent implements OnInit {
       {
         required: 'Du mangler at udfylde udbetaling',
         min: 'Udbetaling skal være større end 0',
-        max: 'Udbetaling skal være lig med eller mindre end 10000000',
+        max: 'Udbetaling skal være lig med eller mindre end 10.000.000',
       }
     );
   }
@@ -130,19 +130,19 @@ export class LaanRegistrerComponent implements OnInit {
       this.fb.group({
         laanprodukt: [Validators.required],
         pris: [
-          '',
+          null,
           [Validators.required, Validators.min(1), Validators.max(10000000)],
         ],
         udbetaling: [
-          '',
+          null,
           [Validators.required, Validators.min(1), , Validators.max(10000000)],
         ],
         loebetid: [
-          '',
+          null,
           [Validators.required, Validators.min(1), Validators.max(30)],
         ],
-        afdragsfrihed: ['', [Validators.min(0), Validators.max(30)]],
-        loebetidBank: ['', [Validators.min(0), Validators.max(20)]],
+        afdragsfrihed: [null, [Validators.min(0), Validators.max(30)]],
+        loebetidBank: [null, [Validators.min(0), Validators.max(20)]],
       }).controls,
       {
         updateOn: 'blur',

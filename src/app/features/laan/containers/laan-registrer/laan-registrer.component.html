@@ -36,6 +36,7 @@
       class="form-control"
       id="prisInput"
       placeholder="Indtast pris"
+      currencyMask
     />
 
     <p class="text-danger" *ngIf="prisValidationMessage">
@@ -51,6 +52,7 @@
       class="form-control"
       id="udbetalingInput"
       placeholder="Indtast udbetaling"
+      currencyMask
     />
 
     <p class="text-danger" *ngIf="udbetalingValidationMessage">
