@@ -11,6 +11,7 @@ export type LaanState = StateOfType<{
     saved: boolean;
     error: HttpErrorResponse | null;
   };
+  boligKey: string;
   laan: Laan[];
 }>;
 

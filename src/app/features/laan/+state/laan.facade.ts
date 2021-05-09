@@ -1,6 +1,6 @@
 import * as fromSelectors from './laan.selectors';
 import { LaanDispatchableActions } from './laan.actions';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged, first } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
@@ -37,6 +37,16 @@ export class LaanFacade {
     distinctUntilChanged(),
     select(fromSelectors.selectLaan)
   );
+
+  public get boligKey(): string {
+    let key: string = null;
+    this.store
+      .pipe(distinctUntilChanged(), select(fromSelectors.selectBoligKey))
+      .pipe(first())
+      .subscribe((s) => (key = s));
+
+    return key;
+  }
 
   public Dispatch(action: LaanDispatchableActions): void {
     this.store.dispatch(action);

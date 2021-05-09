@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MsalService } from '@azure/msal-angular';
 import { loadLaan } from '../../+state/laan.actions';
 import { LaanFacade } from '../../+state/laan.facade';
 
@@ -8,9 +9,12 @@ import { LaanFacade } from '../../+state/laan.facade';
   styleUrls: ['./laan-oversigt.component.scss'],
 })
 export class LaanOversigtComponent implements OnInit {
+  @Input()
+  boligKey: string;
+
   constructor(public laanFacade: LaanFacade) {}
 
   ngOnInit(): void {
-    this.laanFacade.Dispatch(loadLaan({ boligKey: 'lars' }));
+    this.laanFacade.Dispatch(loadLaan({ boligKey: this.boligKey }));
   }
 }

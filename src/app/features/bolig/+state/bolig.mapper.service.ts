@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { MsalService } from '@azure/msal-angular';
 import {
   BoligRegistrerRequest,
   BoligResponse,
@@ -7,6 +8,8 @@ import { Bolig, BoligRegistrer } from './bolig.interfaces';
 
 @Injectable()
 export class BoligMapperService {
+  constructor(private msalService: MsalService) {}
+
   public mapToBolig(boligResponse: BoligResponse): Bolig[] {
     return boligResponse.map(
       (m): Bolig => {
@@ -29,7 +32,7 @@ export class BoligMapperService {
     boligRegistrer: BoligRegistrer
   ): BoligRegistrerRequest {
     return {
-      userKey: 'lars',
+      userKey: this.msalService.instance.getActiveAccount()?.username,
       ...boligRegistrer,
     };
   }

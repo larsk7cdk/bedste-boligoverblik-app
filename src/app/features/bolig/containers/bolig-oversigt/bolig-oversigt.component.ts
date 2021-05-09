@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MsalService } from '@azure/msal-angular';
 import { loadLaanprodukt } from 'src/app/features/laanprodukt/+state/laanprodukt.actions';
 import { LaanproduktFacade } from 'src/app/features/laanprodukt/+state/laanprodukt.facade';
 import { loadBolig, setSelectedBolig } from '../../+state/bolig.actions';
@@ -14,12 +15,17 @@ import { Bolig } from '../../+state/bolig.interfaces';
 export class BoligOversigtComponent implements OnInit {
   constructor(
     private router: Router,
+    private msalService: MsalService,
     public boligFacade: BoligFacade,
     public laanproduktFacade: LaanproduktFacade
   ) {}
 
   ngOnInit(): void {
-    this.boligFacade.Dispatch(loadBolig({ userKey: 'lars' }));
+    this.boligFacade.Dispatch(
+      loadBolig({
+        userKey: this.msalService.instance.getActiveAccount()?.username,
+      })
+    );
     this.laanproduktFacade.Dispatch(loadLaanprodukt());
   }
 

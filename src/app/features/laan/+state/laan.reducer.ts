@@ -9,19 +9,21 @@ const initialState: LaanState = {
     saved: false,
     error: null,
   },
+  boligKey: null,
   laan: [],
 };
 
 export const reducer = createReducer(
   initialState,
 
-  on(fromActions.loadLaan, (state) => {
+  on(fromActions.loadLaan, (state, { boligKey }) => {
     return {
       ...state,
       behaviours: {
         ...state.behaviours,
         loading: true,
       },
+      boligKey,
     };
   }),
 

@@ -37,3 +37,8 @@ export const selectLaan = createSelector(
   selectLaanState,
   (state: fromInterfaces.LaanState): fromInterfaces.Laan[] => state.laan
 );
+
+export const selectBoligKey = createSelector(
+  selectLaanState,
+  (state: fromInterfaces.LaanState): string => state.boligKey
+);

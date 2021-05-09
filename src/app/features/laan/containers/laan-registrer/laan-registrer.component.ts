@@ -118,7 +118,7 @@ export class LaanRegistrerComponent implements OnInit, OnDestroy {
     });
 
     const request: LaanRegistrerRequest = {
-      boligKey: 'lars',
+      boligKey: this.laanFacade.boligKey,
       request: JSON.stringify(this._createLaanberegningRequest()),
       result,
     };

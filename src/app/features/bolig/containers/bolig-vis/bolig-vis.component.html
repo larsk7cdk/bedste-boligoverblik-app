@@ -17,5 +17,5 @@
 </section>
 
 <section class="mt-5">
-  <app-laan-oversigt></app-laan-oversigt>
+  <app-laan-oversigt [boligKey]="(bolig$ | async).rowKey"></app-laan-oversigt>
 </section>
