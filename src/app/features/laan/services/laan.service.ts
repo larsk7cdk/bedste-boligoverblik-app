@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LaanRegistrerRequest, LaanResponse } from './laan.service.interfaces';
-import { LaanRegistrer } from '../+state/laan.interfaces';
 
 @Injectable()
 export class LaanService {
