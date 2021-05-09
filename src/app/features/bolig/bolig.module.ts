@@ -5,7 +5,6 @@ import { BoligRoutingModule } from './bolig-routing.module';
 import { BoligService } from './services/bolig.service';
 import { BoligVisComponent } from './containers/bolig-vis/bolig-vis.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { LaanModule } from '../laan/laan.module';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +20,6 @@ import { BoligStateModule } from './+state/bolig.state.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule,
     SharedModule,
     BoligRoutingModule,
     BoligStateModule,

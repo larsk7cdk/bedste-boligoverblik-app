@@ -18,14 +18,14 @@ export const b2cPolicies = {
     },
     forgotPassword: {
       authority:
-        'https://bedsteboligoverblik.b2clogin.com/bedsteboligoverblik.onmicrosoft.com/B2C_1_ProfileEdit',
+        'https://bedsteboligoverblik.b2clogin.com/bedsteboligoverblik.onmicrosoft.com/B2C_1_PasswordReset',
     },
     editProfile: {
       authority:
-        'https://bedsteboligoverblik.b2clogin.com/bedsteboligoverblik.onmicrosoft.com/B2C_1_PasswordReset',
+        'https://bedsteboligoverblik.b2clogin.com/bedsteboligoverblik.onmicrosoft.com/B2C_1_ProfileEdit',
     },
   },
-  authorityDomain: 'https://bedsteboligoverblik.b2clogin',
+  authorityDomain: 'https://bedsteboligoverblik.b2clogin.com',
 };
 
 /**
@@ -33,6 +33,6 @@ export const b2cPolicies = {
  * The current application coordinates were pre-registered in a B2C tenant.
  */
 export const apiConfig: { scopes: string[]; uri: string } = {
-  scopes: ['https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read'],
-  uri: 'https://fabrikamb2chello.azurewebsites.net/hello',
+  scopes: ['https://bedsteboligoverblik.onmicrosoft.com/api/api.read'],
+  uri: 'https://bedsteboligoverblik.b2clogin.com/api',
 };

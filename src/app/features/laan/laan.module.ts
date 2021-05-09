@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { LaanberegningModule } from '../laanberegning/laanberegning.module';
 import { LaanberegningRoutingModule } from './laan-routing.module';
 import { LaanListeComponent } from './presentational/laan-liste/laan-liste.component';
@@ -24,7 +23,6 @@ import { LaanStateModule } from './+state/laan.state.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule,
     NgxCurrencyModule,
     SharedModule,
     LaanberegningRoutingModule,
