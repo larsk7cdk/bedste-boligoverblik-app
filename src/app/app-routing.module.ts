@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./features/no-auth/no-auth.module').then((m) => m.NoAuthModule),
+      import('./features/public/public.module').then((m) => m.PublicModule),
   },
   {
     path: 'boliger',

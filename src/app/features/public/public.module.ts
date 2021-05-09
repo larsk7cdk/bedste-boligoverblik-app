@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NoAuthRoutingModule } from './no-auth-routing.module';
+import { PublicRoutingModule } from './public-routing.module';
 import { OmComponent } from './containers/om/om.component';
 
 @NgModule({
   declarations: [OmComponent],
-  imports: [CommonModule, NoAuthRoutingModule],
+  imports: [CommonModule, PublicRoutingModule],
 })
-export class NoAuthModule {}
+export class PublicModule {}
