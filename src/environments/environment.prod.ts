@@ -1,5 +1,7 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net/api',
-  googleApiKey: ''
+  apiBaseUrl: undefined,
+  google: {
+    apiKey: undefined,
+  },
 };

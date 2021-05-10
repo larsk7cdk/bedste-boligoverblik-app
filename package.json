@@ -2,10 +2,11 @@
   "name": "bedste-boligoverblik-app",
   "version": "0.0.0",
   "scripts": {
+    "config": "ts-node -O '{\"module\": \"commonjs\"}' ./config.index.ts",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:prod": "ng build --prod",
+    "build": "npm run config && ng build",
+    "build:prod": "npm run config && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 # Api Key config
-api-keys.config.ts
+/environments/google.environment.ts
