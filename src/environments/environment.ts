@@ -2,13 +2,15 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { google } from './google.environment';
+import { apiKey } from './google.environment';
 
 export const environment = {
   production: true,
   apiBaseUrl: 'https://bedste-boligoverblik-api.azurewebsites.net/api',
   // apiBaseUrl: 'https://localhost:5001/api',
-  ...google
+  google: {
+    apiKey,
+  },
 };
 
 /*
