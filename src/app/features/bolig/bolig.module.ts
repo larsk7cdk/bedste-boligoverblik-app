@@ -1,4 +1,3 @@
-import { BoligGuard } from '../../shared/guards/bolig.guard';
 import { BoligOversigtComponent } from './containers/bolig-oversigt/bolig-oversigt.component';
 import { BoligRegistrerComponent } from './containers/bolig-registrer/bolig-registrer.component';
 import { BoligRoutingModule } from './bolig-routing.module';
@@ -26,6 +25,6 @@ import { BoligStateModule } from './+state/bolig.state.module';
     LaanModule,
   ],
   exports: [BoligOversigtComponent],
-  providers: [BoligService, BoligGuard],
+  providers: [BoligService],
 })
 export class BoligModule {}
