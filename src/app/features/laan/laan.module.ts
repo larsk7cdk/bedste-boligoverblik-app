@@ -10,7 +10,7 @@ import { LaanVisComponent } from './presentational/laan-vis/laan-vis.component';
 import { NgModule } from '@angular/core';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { LaanStateModule } from './+state/laan.state.module';
 
 @NgModule({

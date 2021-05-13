@@ -3,9 +3,6 @@ import { BoligRegistrerComponent } from './containers/bolig-registrer/bolig-regi
 import { BoligVisComponent } from './containers/bolig-vis/bolig-vis.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BoligGuard } from '../shared/guards/bolig.guard';
-import { MsalGuard } from '@azure/msal-angular';
-
 
 const routes: Routes = [
   {

@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { StateOfType } from '../../shared/store/common';
+import { StateOfType } from '../../../shared/store/common';
 
 export type BoligState = StateOfType<{
   behaviours: {

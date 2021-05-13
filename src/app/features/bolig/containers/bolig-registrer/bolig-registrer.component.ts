@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ValidatorService } from 'src/app/features/shared/validation/validator.service';
+import { ValidatorService } from '../../../../shared/validation/validator.service';
 import { saveBolig, saveBoligInit } from '../../+state/bolig.actions';
 import { BoligFacade } from '../../+state/bolig.facade';
 import { BoligRegistrer } from '../../+state/bolig.interfaces';

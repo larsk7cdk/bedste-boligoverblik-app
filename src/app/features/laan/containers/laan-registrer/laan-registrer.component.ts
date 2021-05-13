@@ -1,17 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { LaanberegningRequest } from 'src/app/features/laanberegning/services/laanberegning.service.interfaces';
+import { LaanRegistrerRequest } from '../../services/laan.service.interfaces';
 import { Observable, Subscription } from 'rxjs';
-import { first, skipWhile } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { ValidatorService } from '../../../../shared/validation/validator.service';
 import { loadLaanberegning } from 'src/app/features/laanberegning/+state/laanberegning.actions';
 import { LaanberegningFacade } from 'src/app/features/laanberegning/+state/laanberegning.facade';
 import { Laanberegning } from 'src/app/features/laanberegning/+state/laanberegning.interfaces';
-import { LaanberegningRequest } from 'src/app/features/laanberegning/services/laanberegning.service.interfaces';
 import { LaanproduktFacade } from 'src/app/features/laanprodukt/+state/laanprodukt.facade';
-import { ValidatorService } from 'src/app/features/shared/validation/validator.service';
 import { saveLaan } from '../../+state/laan.actions';
 import { LaanFacade } from '../../+state/laan.facade';
-import { LaanRegistrerRequest } from '../../services/laan.service.interfaces';
 
 @Component({
   selector: 'app-laan-registrer',

@@ -1,4 +1,4 @@
-import { BoligGuard } from 'src/app/features/shared/guards/bolig.guard';
+import { BoligGuard } from '../../shared/guards/bolig.guard';
 import { BoligOversigtComponent } from './containers/bolig-oversigt/bolig-oversigt.component';
 import { BoligRegistrerComponent } from './containers/bolig-registrer/bolig-registrer.component';
 import { BoligRoutingModule } from './bolig-routing.module';
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { LaanModule } from '../laan/laan.module';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { BoligStateModule } from './+state/bolig.state.module';
 
 @NgModule({
