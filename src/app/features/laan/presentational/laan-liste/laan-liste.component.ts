@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Laan } from '../../+state/laan.interfaces';
 
 @Component({
@@ -12,10 +17,10 @@ export class LaanListeComponent {
   @Input()
   laan: Laan[];
 
-  constructor(private router: Router) {}
+  @Output()
+  visLaan: EventEmitter<Laan> = new EventEmitter<Laan>();
 
   onVisLaan($event: Laan): void {
-    console.log('$event', $event);
-    this.router.navigate(['laan/vis'], { state: $event });
+    this.visLaan.emit($event);
   }
 }

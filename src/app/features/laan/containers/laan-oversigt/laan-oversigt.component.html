@@ -1,4 +1,7 @@
-<app-laan-liste [laan]="laanFacade.Laan$ | async"></app-laan-liste>
+<app-laan-liste
+  [laan]="laanFacade.Laan$ | async"
+  (visLaan)="onVisLaan($event)"
+></app-laan-liste>
 
 <button class="btn btn-outline-dark my-3" [routerLink]="['/laan/registrer']">
   Registrer lån
