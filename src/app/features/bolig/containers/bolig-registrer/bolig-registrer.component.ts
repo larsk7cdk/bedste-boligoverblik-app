@@ -88,9 +88,11 @@ export class BoligRegistrerComponent implements OnInit, OnDestroy {
     if (this.subscriptions.length === 0) {
       this.subscriptions.push(
         this.boligFacade.BoligIsSaved$.subscribe((s) => {
-          setTimeout(() => {
-            this.router.navigate(['/boliger']);
-          }, 500);
+          if (s) {
+            setTimeout(() => {
+              this.router.navigate(['/boliger']);
+            }, 500);
+          }
         })
       );
     }
